@@ -1,0 +1,733 @@
+[2024-07-22 11:30:25:1441][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2024-07-22 11:30:25:1494][restartedMain] INFO  c.d.d.DropthebidApplication - Starting DropthebidApplication using Java 21.0.2 with PID 8356 (C:\lect_springfw\toyProject\dropthebid\build\classes\java\main started by KOSA in C:\lect_springfw\toyProject\dropthebid)
+[2024-07-22 11:30:25:1495][restartedMain] INFO  c.d.d.DropthebidApplication - No active profile set, falling back to 1 default profile: "default"
+[2024-07-22 11:30:25:1557][restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\KOSA\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/KOSA/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
+[2024-07-22 11:30:25:1558][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-07-22 11:30:25:1558][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-07-22 11:30:33:779][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2024-07-22 11:30:33:814][restartedMain] INFO  c.d.d.DropthebidApplication - Starting DropthebidApplication using Java 21.0.2 with PID 816 (C:\lect_springfw\toyProject\dropthebid\build\classes\java\main started by KOSA in C:\lect_springfw\toyProject\dropthebid)
+[2024-07-22 11:30:33:815][restartedMain] INFO  c.d.d.DropthebidApplication - No active profile set, falling back to 1 default profile: "default"
+[2024-07-22 11:30:33:867][restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\KOSA\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/KOSA/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
+[2024-07-22 11:30:33:868][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-07-22 11:30:33:868][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-07-22 11:30:34:2143][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+[2024-07-22 11:30:35:2223][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1355 ms
+[2024-07-22 11:30:35:2929][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2024-07-22 11:30:35:2969][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+[2024-07-22 11:30:35:2980][restartedMain] INFO  c.d.d.DropthebidApplication - Started DropthebidApplication in 2.72 seconds (process running for 3.461)
+[2024-07-22 11:30:41:1450][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2024-07-22 11:30:41:1535][restartedMain] INFO  c.d.d.DropthebidApplication - Starting DropthebidApplication using Java 21.0.2 with PID 13900 (C:\lect_springfw\toyProject\dropthebid\build\classes\java\main started by KOSA in C:\lect_springfw\toyProject\dropthebid)
+[2024-07-22 11:30:41:1536][restartedMain] INFO  c.d.d.DropthebidApplication - No active profile set, falling back to 1 default profile: "default"
+[2024-07-22 11:30:41:1634][restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\KOSA\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/KOSA/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
+[2024-07-22 11:30:41:1635][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-07-22 11:30:41:1635][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-07-22 11:30:43:3758][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+[2024-07-22 11:30:43:3774][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:30:43:3777][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2024-07-22 11:30:43:3777][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+[2024-07-22 11:30:43:3867][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2024-07-22 11:30:43:3867][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2231 ms
+[2024-07-22 11:30:45:5440][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2024-07-22 11:30:45:5476][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:30:45:5524][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+[2024-07-22 11:30:45:5541][restartedMain] INFO  c.d.d.DropthebidApplication - Started DropthebidApplication in 5.214 seconds (process running for 6.155)
+[2024-07-22 11:32:18:620][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2024-07-22 11:32:18:667][restartedMain] INFO  c.d.d.DropthebidApplication - Starting DropthebidApplication using Java 21.0.2 with PID 832 (C:\lect_springfw\toyProject\dropthebid\build\classes\java\main started by KOSA in C:\lect_springfw\toyProject\dropthebid)
+[2024-07-22 11:32:18:668][restartedMain] INFO  c.d.d.DropthebidApplication - No active profile set, falling back to 1 default profile: "default"
+[2024-07-22 11:32:19:725][restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\KOSA\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/KOSA/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
+[2024-07-22 11:32:19:725][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-07-22 11:32:19:725][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-07-22 11:32:20:2273][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+[2024-07-22 11:32:20:2284][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:32:20:2286][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2024-07-22 11:32:20:2286][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+[2024-07-22 11:32:20:2336][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2024-07-22 11:32:20:2337][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1611 ms
+[2024-07-22 11:32:21:3001][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2024-07-22 11:32:21:3016][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:32:21:3033][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+[2024-07-22 11:32:21:3040][restartedMain] INFO  c.d.d.DropthebidApplication - Started DropthebidApplication in 2.836 seconds (process running for 3.461)
+[2024-07-22 11:32:27:9161][http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-07-22 11:32:27:9161][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2024-07-22 11:32:27:9163][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+[2024-07-22 11:32:27:9218][http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2024-07-22 11:32:27:9551][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection opened. {executed in 322ms} 
+[2024-07-22 11:32:27:9553][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.new Connection returned 
+[2024-07-22 11:32:27:9553][http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+[2024-07-22 11:32:27:9554][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.isReadOnly() returned false
+[2024-07-22 11:32:27:9554][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.getAutoCommit() returned true
+[2024-07-22 11:32:27:9556][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.isValid(1) returned true
+[2024-07-22 11:32:27:9557][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.getTransactionIsolation() returned 2
+[2024-07-22 11:32:27:9557][http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@535bc89
+[2024-07-22 11:32:27:9560][http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2024-07-22 11:32:27:9563][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.getAutoCommit() returned true
+[2024-07-22 11:32:27:9674][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. PreparedStatement.new PreparedStatement returned 
+[2024-07-22 11:32:27:9675][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.prepareStatement(select city_id cityId
+    , city_name cityName
+    from city) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@584aa07f
+[2024-07-22 11:32:28:9738][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 2. Connection opened. {executed in 76ms} 
+[2024-07-22 11:32:28:9739][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 2. Connection.new Connection returned 
+[2024-07-22 11:32:28:9739][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 2. Connection.isReadOnly() returned false
+[2024-07-22 11:32:28:9739][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 2. Connection.getAutoCommit() returned true
+[2024-07-22 11:32:28:9768][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. select city_id cityId , city_name cityName from city  {executed in 87 ms}
+[2024-07-22 11:32:28:9768][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. PreparedStatement.execute() returned true
+[2024-07-22 11:32:28:9776][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.new ResultSet returned 
+[2024-07-22 11:32:28:9776][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. PreparedStatement.getResultSet() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@59d09341
+[2024-07-22 11:32:28:9781][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.getMetaData() returned oracle.jdbc.driver.OracleResultSetMetaData@24b95674
+[2024-07-22 11:32:28:9782][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.getType() returned 1003
+[2024-07-22 11:32:28:9783][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.isClosed() returned false
+[2024-07-22 11:32:28:9783][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.next() returned true
+[2024-07-22 11:32:28:9792][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.getLong(CITYID) returned 1
+[2024-07-22 11:32:28:9793][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.getString(CITYNAME) returned 서울특별시
+[2024-07-22 11:32:28:9793][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.isClosed() returned false
+[2024-07-22 11:32:28:9795][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 
+|-------|---------|
+|cityid |cityname |
+|-------|---------|
+|1      |서울특별시    |
+|-------|---------|
+
+[2024-07-22 11:32:28:9796][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.next() returned false
+[2024-07-22 11:32:28:9796][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.close() returned void
+[2024-07-22 11:32:28:9796][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.getMetaData() returned oracle.jdbc.driver.OracleDatabaseMetaData@7693970f
+[2024-07-22 11:32:28:9805][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. PreparedStatement.close() returned 
+[2024-07-22 11:32:28:9810][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.clearWarnings() returned 
+[2024-07-22 11:32:28:9810][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 3. Connection opened. {executed in 58ms} 
+[2024-07-22 11:32:28:9810][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 3. Connection.new Connection returned 
+[2024-07-22 11:32:28:9811][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 3. Connection.isReadOnly() returned false
+[2024-07-22 11:32:28:9811][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 3. Connection.getAutoCommit() returned true
+[2024-07-22 11:32:28:9886][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 4. Connection opened. {executed in 61ms} 
+[2024-07-22 11:32:28:9886][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 4. Connection.new Connection returned 
+[2024-07-22 11:32:28:9886][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 4. Connection.isReadOnly() returned false
+[2024-07-22 11:32:28:9886][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 4. Connection.getAutoCommit() returned true
+[2024-07-22 11:32:28:9945][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 5. Connection opened. {executed in 48ms} 
+[2024-07-22 11:32:28:9945][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 5. Connection.new Connection returned 
+[2024-07-22 11:32:28:9945][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 5. Connection.isReadOnly() returned false
+[2024-07-22 11:32:28:9945][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 5. Connection.getAutoCommit() returned true
+[2024-07-22 11:32:28:10016][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 6. Connection opened. {executed in 60ms} 
+[2024-07-22 11:32:28:10016][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 6. Connection.new Connection returned 
+[2024-07-22 11:32:28:10016][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 6. Connection.isReadOnly() returned false
+[2024-07-22 11:32:28:10016][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 6. Connection.getAutoCommit() returned true
+[2024-07-22 11:32:28:10092][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 7. Connection opened. {executed in 64ms} 
+[2024-07-22 11:32:28:10093][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 7. Connection.new Connection returned 
+[2024-07-22 11:32:28:10093][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 7. Connection.isReadOnly() returned false
+[2024-07-22 11:32:28:10093][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 7. Connection.getAutoCommit() returned true
+[2024-07-22 11:32:28:10172][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 8. Connection opened. {executed in 67ms} 
+[2024-07-22 11:32:28:10172][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 8. Connection.new Connection returned 
+[2024-07-22 11:32:28:10172][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 8. Connection.isReadOnly() returned false
+[2024-07-22 11:32:28:10172][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 8. Connection.getAutoCommit() returned true
+[2024-07-22 11:32:28:10240][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 9. Connection opened. {executed in 57ms} 
+[2024-07-22 11:32:28:10240][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 9. Connection.new Connection returned 
+[2024-07-22 11:32:28:10240][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 9. Connection.isReadOnly() returned false
+[2024-07-22 11:32:28:10241][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 9. Connection.getAutoCommit() returned true
+[2024-07-22 11:32:28:10305][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 10. Connection opened. {executed in 54ms} 
+[2024-07-22 11:32:28:10305][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 10. Connection.new Connection returned 
+[2024-07-22 11:32:28:10305][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 10. Connection.isReadOnly() returned false
+[2024-07-22 11:32:28:10305][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 10. Connection.getAutoCommit() returned true
+[2024-07-22 11:33:00:42606][SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2024-07-22 11:33:00:42609][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 1. Connection closed. {executed in 1ms} 
+[2024-07-22 11:33:00:42609][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 1. Connection.close() returned 
+[2024-07-22 11:33:00:42610][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 2. Connection closed. {executed in 1ms} 
+[2024-07-22 11:33:00:42610][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 2. Connection.close() returned 
+[2024-07-22 11:33:00:42610][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 3. Connection closed. {executed in 0ms} 
+[2024-07-22 11:33:00:42610][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 3. Connection.close() returned 
+[2024-07-22 11:33:00:42611][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 4. Connection closed. {executed in 1ms} 
+[2024-07-22 11:33:00:42611][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 4. Connection.close() returned 
+[2024-07-22 11:33:00:42611][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 5. Connection closed. {executed in 0ms} 
+[2024-07-22 11:33:00:42611][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 5. Connection.close() returned 
+[2024-07-22 11:33:00:42612][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 6. Connection closed. {executed in 0ms} 
+[2024-07-22 11:33:00:42612][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 6. Connection.close() returned 
+[2024-07-22 11:33:00:42613][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 7. Connection closed. {executed in 1ms} 
+[2024-07-22 11:33:00:42613][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 7. Connection.close() returned 
+[2024-07-22 11:33:00:42614][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 8. Connection closed. {executed in 1ms} 
+[2024-07-22 11:33:00:42614][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 8. Connection.close() returned 
+[2024-07-22 11:33:00:42615][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 9. Connection closed. {executed in 1ms} 
+[2024-07-22 11:33:00:42615][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 9. Connection.close() returned 
+[2024-07-22 11:33:00:42615][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 10. Connection closed. {executed in 0ms} 
+[2024-07-22 11:33:00:42616][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 10. Connection.close() returned 
+[2024-07-22 11:33:00:42616][SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2024-07-22 11:34:52:623][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2024-07-22 11:34:52:662][restartedMain] INFO  c.d.d.DropthebidApplication - Starting DropthebidApplication using Java 21.0.2 with PID 20432 (C:\lect_springfw\toyProject\dropthebid\build\classes\java\main started by KOSA in C:\lect_springfw\toyProject\dropthebid)
+[2024-07-22 11:34:52:662][restartedMain] INFO  c.d.d.DropthebidApplication - No active profile set, falling back to 1 default profile: "default"
+[2024-07-22 11:34:52:714][restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\KOSA\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/KOSA/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
+[2024-07-22 11:34:52:714][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-07-22 11:34:52:714][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-07-22 11:34:53:1752][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+[2024-07-22 11:34:53:1760][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:34:53:1761][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2024-07-22 11:34:53:1761][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+[2024-07-22 11:34:53:1807][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2024-07-22 11:34:53:1808][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1093 ms
+[2024-07-22 11:34:54:2408][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2024-07-22 11:34:54:2421][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:34:54:2436][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+[2024-07-22 11:34:54:2443][restartedMain] INFO  c.d.d.DropthebidApplication - Started DropthebidApplication in 2.241 seconds (process running for 2.852)
+[2024-07-22 11:35:09:615][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2024-07-22 11:35:09:653][restartedMain] INFO  c.d.d.DropthebidApplication - Starting DropthebidApplication using Java 21.0.2 with PID 18308 (C:\lect_springfw\toyProject\dropthebid\build\classes\java\main started by KOSA in C:\lect_springfw\toyProject\dropthebid)
+[2024-07-22 11:35:09:654][restartedMain] INFO  c.d.d.DropthebidApplication - No active profile set, falling back to 1 default profile: "default"
+[2024-07-22 11:35:09:707][restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\KOSA\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/KOSA/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
+[2024-07-22 11:35:09:707][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-07-22 11:35:09:707][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-07-22 11:35:10:1757][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+[2024-07-22 11:35:10:1765][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:35:10:1767][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2024-07-22 11:35:10:1767][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+[2024-07-22 11:35:10:1816][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2024-07-22 11:35:10:1816][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1108 ms
+[2024-07-22 11:35:10:2438][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2024-07-22 11:35:10:2456][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:35:10:2473][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+[2024-07-22 11:35:10:2481][restartedMain] INFO  c.d.d.DropthebidApplication - Started DropthebidApplication in 2.291 seconds (process running for 2.877)
+[2024-07-22 11:35:18:646][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2024-07-22 11:35:18:687][restartedMain] INFO  c.d.d.DropthebidApplication - Starting DropthebidApplication using Java 21.0.2 with PID 1420 (C:\lect_springfw\toyProject\dropthebid\build\classes\java\main started by KOSA in C:\lect_springfw\toyProject\dropthebid)
+[2024-07-22 11:35:18:688][restartedMain] INFO  c.d.d.DropthebidApplication - No active profile set, falling back to 1 default profile: "default"
+[2024-07-22 11:35:18:739][restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\KOSA\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/KOSA/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
+[2024-07-22 11:35:18:740][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-07-22 11:35:18:740][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-07-22 11:35:19:1826][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+[2024-07-22 11:35:19:1835][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:35:19:1837][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2024-07-22 11:35:19:1837][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+[2024-07-22 11:35:19:1886][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2024-07-22 11:35:19:1886][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1146 ms
+[2024-07-22 11:35:20:2495][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2024-07-22 11:35:20:2510][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:35:20:2530][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+[2024-07-22 11:35:20:2537][restartedMain] INFO  c.d.d.DropthebidApplication - Started DropthebidApplication in 2.336 seconds (process running for 2.94)
+[2024-07-22 11:35:29:617][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2024-07-22 11:35:29:658][restartedMain] INFO  c.d.d.DropthebidApplication - Starting DropthebidApplication using Java 21.0.2 with PID 2380 (C:\lect_springfw\toyProject\dropthebid\build\classes\java\main started by KOSA in C:\lect_springfw\toyProject\dropthebid)
+[2024-07-22 11:35:29:659][restartedMain] INFO  c.d.d.DropthebidApplication - No active profile set, falling back to 1 default profile: "default"
+[2024-07-22 11:35:29:722][restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\KOSA\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/KOSA/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
+[2024-07-22 11:35:29:723][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-07-22 11:35:29:723][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-07-22 11:35:31:2242][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+[2024-07-22 11:35:31:2253][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:35:31:2254][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2024-07-22 11:35:31:2255][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+[2024-07-22 11:35:31:2307][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2024-07-22 11:35:31:2308][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1585 ms
+[2024-07-22 11:35:32:2936][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2024-07-22 11:35:32:2950][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:35:32:2971][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+[2024-07-22 11:35:32:2981][restartedMain] INFO  c.d.d.DropthebidApplication - Started DropthebidApplication in 2.794 seconds (process running for 3.363)
+[2024-07-22 11:46:50:637][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2024-07-22 11:46:50:682][restartedMain] INFO  c.d.d.DropthebidApplication - Starting DropthebidApplication using Java 21.0.2 with PID 17448 (C:\lect_springfw\toyProject\dropthebid\build\classes\java\main started by KOSA in C:\lect_springfw\toyProject\dropthebid)
+[2024-07-22 11:46:50:683][restartedMain] INFO  c.d.d.DropthebidApplication - No active profile set, falling back to 1 default profile: "default"
+[2024-07-22 11:46:50:746][restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\KOSA\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/KOSA/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
+[2024-07-22 11:46:50:746][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-07-22 11:46:50:746][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-07-22 11:46:51:1780][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+[2024-07-22 11:46:51:1792][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:46:51:1793][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2024-07-22 11:46:51:1793][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+[2024-07-22 11:46:51:1848][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2024-07-22 11:46:51:1848][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1102 ms
+[2024-07-22 11:46:51:2123][restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testController' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'testService' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'testRepository' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testRepository.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+[2024-07-22 11:46:51:2125][restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2024-07-22 11:46:51:2136][restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[2024-07-22 11:46:51:2159][restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testController' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'testService' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'testRepository' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testRepository.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1212)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.dtbid.dropthebid.DropthebidApplication.main(DropthebidApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testService' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'testRepository' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testRepository.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1212)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testRepository' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testRepository.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1705)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1454)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionTemplate' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionTemplate' parameter 0: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\lect_springfw\toyProject\dropthebid\build\resources\main\mapper\testMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 50 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\lect_springfw\toyProject\dropthebid\build\resources\main\mapper\testMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 60 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\lect_springfw\toyProject\dropthebid\build\resources\main\mapper\testMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 74 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [C:\lect_springfw\toyProject\dropthebid\build\resources\main\mapper\testMapper.xml]'
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:700)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:577)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:720)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 75 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\lect_springfw\toyProject\dropthebid\build\resources\main\mapper\testMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'CityDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: CityDTO
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:127)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:100)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:698)
+	... 81 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'CityDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: CityDTO
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:103)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:105)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:143)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:135)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:125)
+	... 83 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'CityDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: CityDTO
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:132)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101)
+	... 87 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: CityDTO
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:226)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:103)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:322)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 89 common frames omitted
+[2024-07-22 11:47:31:647][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2024-07-22 11:47:31:696][restartedMain] INFO  c.d.d.DropthebidApplication - Starting DropthebidApplication using Java 21.0.2 with PID 14444 (C:\lect_springfw\toyProject\dropthebid\build\classes\java\main started by KOSA in C:\lect_springfw\toyProject\dropthebid)
+[2024-07-22 11:47:31:697][restartedMain] INFO  c.d.d.DropthebidApplication - No active profile set, falling back to 1 default profile: "default"
+[2024-07-22 11:47:31:741][restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\KOSA\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/KOSA/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
+[2024-07-22 11:47:31:741][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-07-22 11:47:31:741][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-07-22 11:47:32:1741][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+[2024-07-22 11:47:32:1751][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:47:32:1753][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2024-07-22 11:47:32:1753][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+[2024-07-22 11:47:32:1799][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2024-07-22 11:47:32:1799][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1058 ms
+[2024-07-22 11:47:33:2075][restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testController' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'testService' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'testRepository' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testRepository.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+[2024-07-22 11:47:33:2077][restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2024-07-22 11:47:33:2090][restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[2024-07-22 11:47:33:2112][restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testController' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'testService' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'testRepository' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testRepository.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1212)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.dtbid.dropthebid.DropthebidApplication.main(DropthebidApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testService' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'testRepository' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testRepository.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1212)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testRepository' defined in file [C:\lect_springfw\toyProject\dropthebid\build\classes\java\main\com\dtbid\dropthebid\controller\testRepository.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1705)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1454)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionTemplate' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionTemplate' parameter 0: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\lect_springfw\toyProject\dropthebid\build\resources\main\mapper\testMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 50 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\lect_springfw\toyProject\dropthebid\build\resources\main\mapper\testMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 60 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\lect_springfw\toyProject\dropthebid\build\resources\main\mapper\testMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 74 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [C:\lect_springfw\toyProject\dropthebid\build\resources\main\mapper\testMapper.xml]'
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:700)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:577)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:720)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 75 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\lect_springfw\toyProject\dropthebid\build\resources\main\mapper\testMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'CityDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: CityDTO
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:127)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:100)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:698)
+	... 81 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'CityDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: CityDTO
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:103)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:105)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:143)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:135)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:125)
+	... 83 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'CityDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: CityDTO
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:132)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101)
+	... 87 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: CityDTO
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:226)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:103)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:322)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 89 common frames omitted
+[2024-07-22 11:48:56:599][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2024-07-22 11:48:56:635][restartedMain] INFO  c.d.d.DropthebidApplication - Starting DropthebidApplication using Java 21.0.2 with PID 8220 (C:\lect_springfw\toyProject\dropthebid\build\classes\java\main started by KOSA in C:\lect_springfw\toyProject\dropthebid)
+[2024-07-22 11:48:56:635][restartedMain] INFO  c.d.d.DropthebidApplication - No active profile set, falling back to 1 default profile: "default"
+[2024-07-22 11:48:56:681][restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\KOSA\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/KOSA/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
+[2024-07-22 11:48:56:681][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-07-22 11:48:56:681][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-07-22 11:48:57:1698][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+[2024-07-22 11:48:57:1708][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:48:57:1709][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2024-07-22 11:48:57:1709][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+[2024-07-22 11:48:57:1766][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2024-07-22 11:48:57:1766][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1084 ms
+[2024-07-22 11:48:57:2367][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2024-07-22 11:48:57:2381][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2024-07-22 11:48:57:2395][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+[2024-07-22 11:48:57:2402][restartedMain] INFO  c.d.d.DropthebidApplication - Started DropthebidApplication in 2.208 seconds (process running for 2.787)
+[2024-07-22 11:49:09:13848][http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-07-22 11:49:09:13848][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2024-07-22 11:49:09:13849][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2024-07-22 11:49:09:13900][http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2024-07-22 11:49:09:14211][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection opened. {executed in 300ms} 
+[2024-07-22 11:49:09:14212][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.new Connection returned 
+[2024-07-22 11:49:09:14212][http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+[2024-07-22 11:49:09:14212][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.isReadOnly() returned false
+[2024-07-22 11:49:09:14212][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.getAutoCommit() returned true
+[2024-07-22 11:49:09:14213][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.isValid(1) returned true
+[2024-07-22 11:49:09:14214][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.getTransactionIsolation() returned 2
+[2024-07-22 11:49:09:14215][http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@585b928f
+[2024-07-22 11:49:09:14218][http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2024-07-22 11:49:09:14220][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.getAutoCommit() returned true
+[2024-07-22 11:49:09:14321][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. PreparedStatement.new PreparedStatement returned 
+[2024-07-22 11:49:09:14321][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.prepareStatement(select city_id cityId
+    , city_name cityName
+    from city) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@156d5710
+[2024-07-22 11:49:09:14397][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 2. Connection opened. {executed in 67ms} 
+[2024-07-22 11:49:09:14397][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 2. Connection.new Connection returned 
+[2024-07-22 11:49:09:14397][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 2. Connection.isReadOnly() returned false
+[2024-07-22 11:49:09:14397][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 2. Connection.getAutoCommit() returned true
+[2024-07-22 11:49:09:14399][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. select city_id cityId , city_name cityName from city  {executed in 74 ms}
+[2024-07-22 11:49:09:14399][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. PreparedStatement.execute() returned true
+[2024-07-22 11:49:09:14406][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.new ResultSet returned 
+[2024-07-22 11:49:09:14406][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. PreparedStatement.getResultSet() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@13f79d2b
+[2024-07-22 11:49:09:14411][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.getMetaData() returned oracle.jdbc.driver.OracleResultSetMetaData@6c251f9f
+[2024-07-22 11:49:09:14411][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.getType() returned 1003
+[2024-07-22 11:49:09:14411][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.isClosed() returned false
+[2024-07-22 11:49:09:14412][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.next() returned true
+[2024-07-22 11:49:09:14418][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.getLong(CITYID) returned 1
+[2024-07-22 11:49:09:14419][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.getString(CITYNAME) returned 서울특별시
+[2024-07-22 11:49:09:14419][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.isClosed() returned false
+[2024-07-22 11:49:10:14421][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 
+|-------|---------|
+|cityid |cityname |
+|-------|---------|
+|1      |서울특별시    |
+|-------|---------|
+
+[2024-07-22 11:49:10:14421][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.next() returned false
+[2024-07-22 11:49:10:14421][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. ResultSet.close() returned void
+[2024-07-22 11:49:10:14421][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.getMetaData() returned oracle.jdbc.driver.OracleDatabaseMetaData@35680d5d
+[2024-07-22 11:49:10:14425][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. PreparedStatement.close() returned 
+[2024-07-22 11:49:10:14430][http-nio-8080-exec-1] INFO  log4jdbc.log4j2 - 1. Connection.clearWarnings() returned 
+[2024-07-22 11:49:10:14473][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 3. Connection opened. {executed in 50ms} 
+[2024-07-22 11:49:10:14473][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 3. Connection.new Connection returned 
+[2024-07-22 11:49:10:14473][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 3. Connection.isReadOnly() returned false
+[2024-07-22 11:49:10:14473][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 3. Connection.getAutoCommit() returned true
+[2024-07-22 11:49:10:14534][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 4. Connection opened. {executed in 48ms} 
+[2024-07-22 11:49:10:14534][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 4. Connection.new Connection returned 
+[2024-07-22 11:49:10:14534][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 4. Connection.isReadOnly() returned false
+[2024-07-22 11:49:10:14534][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 4. Connection.getAutoCommit() returned true
+[2024-07-22 11:49:10:14618][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 5. Connection opened. {executed in 70ms} 
+[2024-07-22 11:49:10:14618][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 5. Connection.new Connection returned 
+[2024-07-22 11:49:10:14619][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 5. Connection.isReadOnly() returned false
+[2024-07-22 11:49:10:14619][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 5. Connection.getAutoCommit() returned true
+[2024-07-22 11:49:10:14701][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 6. Connection opened. {executed in 59ms} 
+[2024-07-22 11:49:10:14701][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 6. Connection.new Connection returned 
+[2024-07-22 11:49:10:14701][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 6. Connection.isReadOnly() returned false
+[2024-07-22 11:49:10:14701][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 6. Connection.getAutoCommit() returned true
+[2024-07-22 11:49:10:14785][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 7. Connection opened. {executed in 65ms} 
+[2024-07-22 11:49:10:14786][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 7. Connection.new Connection returned 
+[2024-07-22 11:49:10:14786][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 7. Connection.isReadOnly() returned false
+[2024-07-22 11:49:10:14786][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 7. Connection.getAutoCommit() returned true
+[2024-07-22 11:49:10:14860][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 8. Connection opened. {executed in 62ms} 
+[2024-07-22 11:49:10:14860][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 8. Connection.new Connection returned 
+[2024-07-22 11:49:10:14860][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 8. Connection.isReadOnly() returned false
+[2024-07-22 11:49:10:14860][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 8. Connection.getAutoCommit() returned true
+[2024-07-22 11:49:10:14926][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 9. Connection opened. {executed in 51ms} 
+[2024-07-22 11:49:10:14926][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 9. Connection.new Connection returned 
+[2024-07-22 11:49:10:14926][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 9. Connection.isReadOnly() returned false
+[2024-07-22 11:49:10:14926][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 9. Connection.getAutoCommit() returned true
+[2024-07-22 11:49:10:14990][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 10. Connection opened. {executed in 52ms} 
+[2024-07-22 11:49:10:14991][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 10. Connection.new Connection returned 
+[2024-07-22 11:49:10:14991][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 10. Connection.isReadOnly() returned false
+[2024-07-22 11:49:10:14991][HikariPool-1 connection adder] INFO  log4jdbc.log4j2 - 10. Connection.getAutoCommit() returned true
+[2024-07-22 11:49:16:20523][SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2024-07-22 11:49:16:20525][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 1. Connection closed. {executed in 1ms} 
+[2024-07-22 11:49:16:20525][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 1. Connection.close() returned 
+[2024-07-22 11:49:16:20526][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 2. Connection closed. {executed in 1ms} 
+[2024-07-22 11:49:16:20526][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 2. Connection.close() returned 
+[2024-07-22 11:49:16:20526][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 3. Connection closed. {executed in 0ms} 
+[2024-07-22 11:49:16:20526][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 3. Connection.close() returned 
+[2024-07-22 11:49:16:20528][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 4. Connection closed. {executed in 2ms} 
+[2024-07-22 11:49:16:20528][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 4. Connection.close() returned 
+[2024-07-22 11:49:16:20528][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 5. Connection closed. {executed in 0ms} 
+[2024-07-22 11:49:16:20528][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 5. Connection.close() returned 
+[2024-07-22 11:49:16:20528][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 6. Connection closed. {executed in 0ms} 
+[2024-07-22 11:49:16:20528][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 6. Connection.close() returned 
+[2024-07-22 11:49:16:20529][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 7. Connection closed. {executed in 1ms} 
+[2024-07-22 11:49:16:20530][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 7. Connection.close() returned 
+[2024-07-22 11:49:16:20530][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 8. Connection closed. {executed in 0ms} 
+[2024-07-22 11:49:16:20530][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 8. Connection.close() returned 
+[2024-07-22 11:49:16:20531][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 9. Connection closed. {executed in 1ms} 
+[2024-07-22 11:49:16:20531][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 9. Connection.close() returned 
+[2024-07-22 11:49:16:20532][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 10. Connection closed. {executed in 1ms} 
+[2024-07-22 11:49:16:20532][HikariPool-1 connection closer] INFO  log4jdbc.log4j2 - 10. Connection.close() returned 
+[2024-07-22 11:49:16:20532][SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2024-07-22 12:18:33:848][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2024-07-22 12:18:33:884][restartedMain] INFO  c.d.d.DropthebidApplication - Starting DropthebidApplication using Java 21.0.2 with PID 19664 (C:\lect_springfw\toyProject\dropthebid\build\classes\java\main started by KOSA in C:\lect_springfw\toyProject\dropthebid)
+[2024-07-22 12:18:33:885][restartedMain] INFO  c.d.d.DropthebidApplication - No active profile set, falling back to 1 default profile: "default"
+[2024-07-22 12:18:34:926][restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\KOSA\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/KOSA/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
+[2024-07-22 12:18:34:927][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-07-22 12:18:34:927][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-07-22 12:18:35:2003][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+[2024-07-22 12:18:35:2012][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2024-07-22 12:18:35:2014][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2024-07-22 12:18:35:2014][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+[2024-07-22 12:18:35:2068][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2024-07-22 12:18:35:2068][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1141 ms
+[2024-07-22 12:18:35:2632][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2024-07-22 12:18:35:2652][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2024-07-22 12:18:35:2669][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+[2024-07-22 12:18:35:2677][restartedMain] INFO  c.d.d.DropthebidApplication - Started DropthebidApplication in 2.381 seconds (process running for 3.125)
+[2024-07-22 12:18:39:5946][http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-07-22 12:18:39:5946][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2024-07-22 12:18:39:5947][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[2024-07-22 12:18:39:6006][http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2024-07-22 12:18:39:6332][http-nio-8080-exec-1] INFO  jdbc.connection - 1. Connection opened
+[2024-07-22 12:18:39:6332][http-nio-8080-exec-1] INFO  jdbc.audit - 1. Connection.new Connection returned 
+[2024-07-22 12:18:39:6332][http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+[2024-07-22 12:18:39:6333][http-nio-8080-exec-1] INFO  jdbc.audit - 1. Connection.isReadOnly() returned false
+[2024-07-22 12:18:39:6333][http-nio-8080-exec-1] INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+[2024-07-22 12:18:39:6334][http-nio-8080-exec-1] INFO  jdbc.audit - 1. Connection.isValid(1) returned true
+[2024-07-22 12:18:39:6334][http-nio-8080-exec-1] INFO  jdbc.audit - 1. Connection.getTransactionIsolation() returned 2
+[2024-07-22 12:18:39:6335][http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@1e2cc57c
+[2024-07-22 12:18:39:6337][http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2024-07-22 12:18:39:6340][http-nio-8080-exec-1] INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+[2024-07-22 12:18:39:6430][http-nio-8080-exec-1] INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+[2024-07-22 12:18:39:6430][http-nio-8080-exec-1] INFO  jdbc.audit - 1. Connection.prepareStatement(select city_id cityId
+    , city_name cityName
+    from city) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@9f19190
+[2024-07-22 12:18:39:6433][http-nio-8080-exec-1] INFO  jdbc.sqlonly - select city_id cityId
+    , city_name cityName
+    from city
+
+[2024-07-22 12:18:39:6501][http-nio-8080-exec-1] INFO  jdbc.sqltiming - select city_id cityId
+    , city_name cityName
+    from city
+ {executed in 67 msec}
+[2024-07-22 12:18:39:6501][http-nio-8080-exec-1] INFO  jdbc.audit - 1. PreparedStatement.execute() returned true
+[2024-07-22 12:18:39:6505][HikariPool-1 connection adder] INFO  jdbc.connection - 2. Connection opened
+[2024-07-22 12:18:39:6505][HikariPool-1 connection adder] INFO  jdbc.audit - 2. Connection.new Connection returned 
+[2024-07-22 12:18:39:6506][HikariPool-1 connection adder] INFO  jdbc.audit - 2. Connection.isReadOnly() returned false
+[2024-07-22 12:18:39:6506][HikariPool-1 connection adder] INFO  jdbc.audit - 2. Connection.getAutoCommit() returned true
+[2024-07-22 12:18:39:6509][http-nio-8080-exec-1] INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+[2024-07-22 12:18:39:6509][http-nio-8080-exec-1] INFO  jdbc.audit - 1. PreparedStatement.getResultSet() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@75d2b2eb
+[2024-07-22 12:18:39:6514][http-nio-8080-exec-1] INFO  jdbc.resultset - 1. ResultSet.getMetaData() returned oracle.jdbc.driver.OracleResultSetMetaData@62982b8b
+[2024-07-22 12:18:39:6515][http-nio-8080-exec-1] INFO  jdbc.resultset - 1. ResultSet.getType() returned 1003
+[2024-07-22 12:18:39:6515][http-nio-8080-exec-1] INFO  jdbc.resultset - 1. ResultSet.isClosed() returned false
+[2024-07-22 12:18:39:6515][http-nio-8080-exec-1] INFO  jdbc.resultset - 1. ResultSet.next() returned true
+[2024-07-22 12:18:39:6521][http-nio-8080-exec-1] INFO  jdbc.resultset - 1. ResultSet.getLong(CITYID) returned 1
+[2024-07-22 12:18:39:6522][http-nio-8080-exec-1] INFO  jdbc.resultset - 1. ResultSet.getString(CITYNAME) returned 서울특별시
+[2024-07-22 12:18:39:6522][http-nio-8080-exec-1] INFO  jdbc.resultset - 1. ResultSet.isClosed() returned false
+[2024-07-22 12:18:39:6523][http-nio-8080-exec-1] INFO  jdbc.resultsettable - 
+|-------|---------|
+|cityid |cityname |
+|-------|---------|
+|1      |서울특별시    |
+|-------|---------|
+
+[2024-07-22 12:18:39:6523][http-nio-8080-exec-1] INFO  jdbc.resultset - 1. ResultSet.next() returned false
+[2024-07-22 12:18:39:6524][http-nio-8080-exec-1] INFO  jdbc.resultset - 1. ResultSet.close() returned void
+[2024-07-22 12:18:39:6524][http-nio-8080-exec-1] INFO  jdbc.audit - 1. Connection.getMetaData() returned oracle.jdbc.driver.OracleDatabaseMetaData@7b4526fa
+[2024-07-22 12:18:39:6526][http-nio-8080-exec-1] INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+[2024-07-22 12:18:39:6532][http-nio-8080-exec-1] INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+[2024-07-22 12:18:39:6591][HikariPool-1 connection adder] INFO  jdbc.connection - 3. Connection opened
+[2024-07-22 12:18:39:6591][HikariPool-1 connection adder] INFO  jdbc.audit - 3. Connection.new Connection returned 
+[2024-07-22 12:18:39:6591][HikariPool-1 connection adder] INFO  jdbc.audit - 3. Connection.isReadOnly() returned false
+[2024-07-22 12:18:39:6591][HikariPool-1 connection adder] INFO  jdbc.audit - 3. Connection.getAutoCommit() returned true
+[2024-07-22 12:18:39:6664][HikariPool-1 connection adder] INFO  jdbc.connection - 4. Connection opened
+[2024-07-22 12:18:39:6664][HikariPool-1 connection adder] INFO  jdbc.audit - 4. Connection.new Connection returned 
+[2024-07-22 12:18:39:6664][HikariPool-1 connection adder] INFO  jdbc.audit - 4. Connection.isReadOnly() returned false
+[2024-07-22 12:18:39:6664][HikariPool-1 connection adder] INFO  jdbc.audit - 4. Connection.getAutoCommit() returned true
+[2024-07-22 12:18:39:6742][HikariPool-1 connection adder] INFO  jdbc.connection - 5. Connection opened
+[2024-07-22 12:18:39:6742][HikariPool-1 connection adder] INFO  jdbc.audit - 5. Connection.new Connection returned 
+[2024-07-22 12:18:39:6742][HikariPool-1 connection adder] INFO  jdbc.audit - 5. Connection.isReadOnly() returned false
+[2024-07-22 12:18:39:6742][HikariPool-1 connection adder] INFO  jdbc.audit - 5. Connection.getAutoCommit() returned true
+[2024-07-22 12:18:39:6826][HikariPool-1 connection adder] INFO  jdbc.connection - 6. Connection opened
+[2024-07-22 12:18:39:6826][HikariPool-1 connection adder] INFO  jdbc.audit - 6. Connection.new Connection returned 
+[2024-07-22 12:18:39:6826][HikariPool-1 connection adder] INFO  jdbc.audit - 6. Connection.isReadOnly() returned false
+[2024-07-22 12:18:39:6826][HikariPool-1 connection adder] INFO  jdbc.audit - 6. Connection.getAutoCommit() returned true
+[2024-07-22 12:18:39:6893][HikariPool-1 connection adder] INFO  jdbc.connection - 7. Connection opened
+[2024-07-22 12:18:39:6893][HikariPool-1 connection adder] INFO  jdbc.audit - 7. Connection.new Connection returned 
+[2024-07-22 12:18:39:6893][HikariPool-1 connection adder] INFO  jdbc.audit - 7. Connection.isReadOnly() returned false
+[2024-07-22 12:18:39:6893][HikariPool-1 connection adder] INFO  jdbc.audit - 7. Connection.getAutoCommit() returned true
+[2024-07-22 12:18:40:6958][HikariPool-1 connection adder] INFO  jdbc.connection - 8. Connection opened
+[2024-07-22 12:18:40:6958][HikariPool-1 connection adder] INFO  jdbc.audit - 8. Connection.new Connection returned 
+[2024-07-22 12:18:40:6958][HikariPool-1 connection adder] INFO  jdbc.audit - 8. Connection.isReadOnly() returned false
+[2024-07-22 12:18:40:6958][HikariPool-1 connection adder] INFO  jdbc.audit - 8. Connection.getAutoCommit() returned true
+[2024-07-22 12:18:40:7026][HikariPool-1 connection adder] INFO  jdbc.connection - 9. Connection opened
+[2024-07-22 12:18:40:7027][HikariPool-1 connection adder] INFO  jdbc.audit - 9. Connection.new Connection returned 
+[2024-07-22 12:18:40:7027][HikariPool-1 connection adder] INFO  jdbc.audit - 9. Connection.isReadOnly() returned false
+[2024-07-22 12:18:40:7027][HikariPool-1 connection adder] INFO  jdbc.audit - 9. Connection.getAutoCommit() returned true
+[2024-07-22 12:18:40:7090][HikariPool-1 connection adder] INFO  jdbc.connection - 10. Connection opened
+[2024-07-22 12:18:40:7090][HikariPool-1 connection adder] INFO  jdbc.audit - 10. Connection.new Connection returned 
+[2024-07-22 12:18:40:7090][HikariPool-1 connection adder] INFO  jdbc.audit - 10. Connection.isReadOnly() returned false
+[2024-07-22 12:18:40:7090][HikariPool-1 connection adder] INFO  jdbc.audit - 10. Connection.getAutoCommit() returned true
+[2024-07-22 12:18:56:23223][SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2024-07-22 12:18:56:23226][HikariPool-1 connection closer] INFO  jdbc.connection - 1. Connection closed
+[2024-07-22 12:18:56:23226][HikariPool-1 connection closer] INFO  jdbc.audit - 1. Connection.close() returned 
+[2024-07-22 12:18:56:23226][HikariPool-1 connection closer] INFO  jdbc.connection - 2. Connection closed
+[2024-07-22 12:18:56:23226][HikariPool-1 connection closer] INFO  jdbc.audit - 2. Connection.close() returned 
+[2024-07-22 12:18:56:23227][HikariPool-1 connection closer] INFO  jdbc.connection - 3. Connection closed
+[2024-07-22 12:18:56:23227][HikariPool-1 connection closer] INFO  jdbc.audit - 3. Connection.close() returned 
+[2024-07-22 12:18:56:23228][HikariPool-1 connection closer] INFO  jdbc.connection - 4. Connection closed
+[2024-07-22 12:18:56:23228][HikariPool-1 connection closer] INFO  jdbc.audit - 4. Connection.close() returned 
+[2024-07-22 12:18:56:23228][HikariPool-1 connection closer] INFO  jdbc.connection - 5. Connection closed
+[2024-07-22 12:18:56:23228][HikariPool-1 connection closer] INFO  jdbc.audit - 5. Connection.close() returned 
+[2024-07-22 12:18:56:23229][HikariPool-1 connection closer] INFO  jdbc.connection - 6. Connection closed
+[2024-07-22 12:18:56:23229][HikariPool-1 connection closer] INFO  jdbc.audit - 6. Connection.close() returned 
+[2024-07-22 12:18:56:23230][HikariPool-1 connection closer] INFO  jdbc.connection - 7. Connection closed
+[2024-07-22 12:18:56:23230][HikariPool-1 connection closer] INFO  jdbc.audit - 7. Connection.close() returned 
+[2024-07-22 12:18:56:23231][HikariPool-1 connection closer] INFO  jdbc.connection - 8. Connection closed
+[2024-07-22 12:18:56:23231][HikariPool-1 connection closer] INFO  jdbc.audit - 8. Connection.close() returned 
+[2024-07-22 12:18:56:23232][HikariPool-1 connection closer] INFO  jdbc.connection - 9. Connection closed
+[2024-07-22 12:18:56:23232][HikariPool-1 connection closer] INFO  jdbc.audit - 9. Connection.close() returned 
+[2024-07-22 12:18:56:23233][HikariPool-1 connection closer] INFO  jdbc.connection - 10. Connection closed
+[2024-07-22 12:18:56:23233][HikariPool-1 connection closer] INFO  jdbc.audit - 10. Connection.close() returned 
+[2024-07-22 12:18:56:23233][SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
