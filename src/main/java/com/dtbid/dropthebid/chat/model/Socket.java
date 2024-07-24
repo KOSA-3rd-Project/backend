@@ -1,4 +1,4 @@
-package com.dtbid.chat.model;
+package com.dtbid.dropthebid.chat.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

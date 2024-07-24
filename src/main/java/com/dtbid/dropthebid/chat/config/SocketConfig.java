@@ -1,4 +1,4 @@
-package com.dtbid.chat.config;
+package com.dtbid.dropthebid.chat.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
