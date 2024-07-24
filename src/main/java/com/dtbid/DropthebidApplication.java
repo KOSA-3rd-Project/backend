@@ -1,4 +1,4 @@
-package com.dtbid.dropthebid;
+package com.dtbid;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
