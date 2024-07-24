@@ -1,4 +1,4 @@
-package com.dtbid.chat.config;
+package com.dtbid.dropthebid.chat.config;
 
 import java.util.HashMap;
 import org.json.simple.JSONObject;
