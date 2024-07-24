@@ -15,4 +15,8 @@ public class HomeService {
   public List<AuctionSummaryDto> getPopularAuctionList() {
     return homeRepository.getPopularAuctionList();
   }
+
+  public List<AuctionSummaryDto> getNewAuctionList() {
+    return homeRepository.getNewAuctionList();
+  }
 }
