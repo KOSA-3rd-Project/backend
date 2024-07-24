@@ -31,4 +31,9 @@ public class HomeController {
 
     return ResponseEntity.ok(slicedAuctionSummaryDtoList);
   }
+
+  @GetMapping("/new")
+  public ResponseEntity<List<AuctionSummaryDto>> getNewAuctionList() {
+    return ResponseEntity.ok(homeService.getNewAuctionList());
+  }
 }

@@ -8,5 +8,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Mapper
 public interface HomeRepository {
+
   List<AuctionSummaryDto> getPopularAuctionList();
+
+  List<AuctionSummaryDto> getNewAuctionList();
 }

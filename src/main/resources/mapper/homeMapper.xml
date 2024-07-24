@@ -15,10 +15,24 @@
                  max(b.price)        as highest_bid,
                  count(b.auction_id) as bid_count
           from auction a
-                 left join bidding b on a.auction_id = b.auction_id
+                 join bidding b on a.auction_id = b.auction_id
           where a.due_date > CURRENT_DATE
           group by a.auction_id, a.item_name, a.start_price, a.due_date
           order by bid_count desc)
+      fetch first 10 rows only
+  </select>
+
+  <select id="getNewAuctionList" resultType="AuctionSummaryDto">
+    select a.auction_id,
+           a.item_name,
+           a.start_price,
+           a.due_date,
+           coalesce(max(b.price), 0) as highest_bid
+    from auction a
+           left join bidding b on a.auction_id = b.auction_id
+    where a.due_date > current_date
+    group by a.auction_id, a.item_name, a.start_price, a.due_date, a.created_at
+    order by a.created_at desc
       fetch first 10 rows only
   </select>
 </mapper>
