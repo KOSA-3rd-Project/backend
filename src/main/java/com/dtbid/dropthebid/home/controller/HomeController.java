@@ -27,7 +27,7 @@ public class HomeController {
   public ResponseEntity<List<AuctionSummaryDto>> getPopularAuctions() {
 
     List<AuctionSummaryDto> auctionSummaryDtoList = homeService.getPopularAuctionList();
-    List<AuctionSummaryDto> slicedAuctionSummaryDtoList = auctionSummaryDtoList.subList(1, auctionSummaryDtoList.size() - 1);
+    List<AuctionSummaryDto> slicedAuctionSummaryDtoList = auctionSummaryDtoList.subList(1, auctionSummaryDtoList.size());
 
     return ResponseEntity.ok(slicedAuctionSummaryDtoList);
   }
