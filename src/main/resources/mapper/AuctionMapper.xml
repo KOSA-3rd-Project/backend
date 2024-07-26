@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.dtbid.dropthebid.auction.repository.AuctionRepository">
+	<insert id="insertAuction" parameterType="com.dtbid.dropthebid.auction.model.AuctionForm">
+		INSERT INTO auction(member_id, category_id, auction_status_id, auction_product_status_id, item_name, description, 
+		location, start_price, start_date, due_date, created_at, updated_at) VALUES (
+		#{memberId}, #{categoryId}, #{auctionStatusId}, #{auctionProductStatusId}, #{itemName}, #{description},
+		#{location}, #{startPrice}, #{startDate}, #{dueDate}, SYSDATE, SYSDATE)
+		
+		<selectKey keyProperty="auctionId" resultType="int" order="AFTER">
+			select ISEQ$$_80453.CURRVAL FROM DUAL
+		</selectKey>
+	</insert>
+	
+	<insert id="insertAuctionImage">
+		INSERT INTO auction_image(auction_id, url, extension, main_image, image_size) VALUES (
+		#{auctionId},#{url}, #{extension}, #{mainImage}, #{imageSize})
+	</insert>
+</mapper>
