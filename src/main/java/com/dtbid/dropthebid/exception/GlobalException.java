@@ -2,6 +2,7 @@ package com.dtbid.dropthebid.exception;
 
 import lombok.Getter;
 
+// 오동건 - 예외처리
 @Getter
 public class GlobalException extends RuntimeException {
 
