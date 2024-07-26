@@ -41,6 +41,7 @@ public class SecurityConfig {
                     .requestMatchers("/auctions/month").permitAll()
                     .requestMatchers("/auctions/popular").permitAll()
                     .requestMatchers("/auctions/new").permitAll()
+                    .requestMatchers("/search").permitAll()
                     .anyRequest().authenticated()                       // 그 외 모든 요청은 인증 요구
             )
 
