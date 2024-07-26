@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dtbid.dropthebid.search.repository.SearchRepository">
+  <select id="searchAuctions" resultType="AuctionDto">
+    with auctions as (
+      select
+        a.auction_id,
+        a.item_name,
+        a.start_price,
+        coalesce(b.highest_bid, 0) as highest_bid,
+        i.url,
+        row_number() over (order by a.auction_id) as rn
+      from auction a
+        left join (
+            select auction_id, max(price) as highest_bid
+            from bidding
+            group by auction_id
+      ) b on a.auction_id = b.auction_id
+        left join (
+            select auction_id, url
+            from auction_image
+            where main_image = 'Y'
+      ) i on a.auction_id = i.auction_id
+        left join category c on a.category_id = c.category_id
+        left join auction_status s on a.auction_status_id = s.auction_status_id
+        left join auction_product_status p on a.auction_product_status_id = p.auction_product_status_id
+      where
+         a.item_name like '%'||#{query}||'%'
+         or a.description like '%'||#{query}||'%'
+         or c.category_name like '%'||#{query}||'%'
+         or s.auction_status_name like '%'||#{query}||'%'
+         or p.status_name like '%'||#{query}||'%'
+    )
+    select auction_id, item_name, start_price, highest_bid, url
+    from auctions
+    where rn between #{offset} + 1 and #{offset} + 9
+    order by auction_id
+  </select>
+
+  <select id="getTotalCount" resultType="int">
+    select count(*)
+    from auction a
+    left join category c on a.category_id = c.category_id
+    left join auction_status s on a.auction_status_id = s.auction_status_id
+    left join auction_product_status p on a.auction_product_status_id = p.auction_product_status_id
+    where
+       a.item_name like '%'||#{query}||'%'
+       or a.description like '%'||#{query}||'%'
+       or c.category_name like '%'||#{query}||'%'
+       or s.auction_status_name like '%'||#{query}||'%'
+       or p.status_name like '%'||#{query}||'%'
+  </select>
+</mapper>
