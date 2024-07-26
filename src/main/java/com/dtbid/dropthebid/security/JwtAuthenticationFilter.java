@@ -29,7 +29,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
 
         String[] api = {"/members/signin", "/members/signup",
-                        "/auctions/month", "/auctions/popular", "/auctions/new"};
+                        "/auctions/month", "/auctions/popular", "/auctions/new", "/search"};
         String path = request.getRequestURI();
 
         return Arrays.stream(api).anyMatch(path::startsWith);
