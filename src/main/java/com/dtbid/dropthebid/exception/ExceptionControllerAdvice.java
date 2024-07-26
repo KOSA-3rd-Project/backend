@@ -1,6 +1,5 @@
 package com.dtbid.dropthebid.exception;
 
-import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.ResponseEntity;
@@ -9,10 +8,12 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import java.util.Objects;
+
 @ControllerAdvice
 public class ExceptionControllerAdvice {
 
-    // RuntimeException
+    // 오동건 - Runtime애 대한 예외처리
     @ExceptionHandler(GlobalException.class)
     public ResponseEntity<ExceptionResponse> globalRequestException(
         final GlobalException globalException) {
@@ -22,7 +23,7 @@ public class ExceptionControllerAdvice {
     }
 
 
-    // Valid Exception
+    // 오동건 - Valid에 대한 예외처리
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ExceptionResponse> validRequestException(
         final MethodArgumentNotValidException methodArgumentNotValidException) {
