@@ -15,7 +15,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Auction {
+public class AuctionDto {
   private int auctionId;
   private int memberId;
   private int categoryId;

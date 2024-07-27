@@ -3,7 +3,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
 <mapper namespace="com.dtbid.dropthebid.auction.repository.AuctionRepository">
-	<insert id="insertAuction" parameterType="com.dtbid.dropthebid.auction.model.AuctionForm">
+	<insert id="insertAuction">
 		INSERT INTO auction(member_id, category_id, auction_status_id, auction_product_status_id, item_name, description, 
 		location, start_price, start_date, due_date, created_at, updated_at) VALUES (
 		#{memberId}, #{categoryId}, #{auctionStatusId}, #{auctionProductStatusId}, #{itemName}, #{description},
@@ -18,4 +18,55 @@
 		INSERT INTO auction_image(auction_id, url, extension, main_image, image_size) VALUES (
 		#{auctionId},#{url}, #{extension}, #{mainImage}, #{imageSize})
 	</insert>
+	
+	<update id="updateAuction">
+			UPDATE auction
+	    <set>
+	        <if test="itemName != null">
+	            item_name = #{itemName},
+	        </if>
+	        <if test="categoryId != 0">
+	            category_id = #{categoryId},
+	        </if>
+	        <if test="auctionProductStatusId != 0">
+	            auction_product_status_id = #{auctionProductStatusId},
+	        </if>
+	        <if test="location != null">
+	            location = #{location},
+	        </if>
+	        <if test="startPrice != 0">
+	            start_price = #{startPrice},
+	        </if>
+	        <if test="startDate != null">
+	            start_date = #{startDate},
+	        </if>
+	        <if test="dueDate != null">
+	            due_date = #{dueDate},
+	        </if>
+	        <if test="description != null">
+	            description = #{description},
+	        </if>
+	        updated_at = SYSDATE
+	    </set>
+	    WHERE auction_id = #{auctionId}
+	</update>
+	
+	<delete id="deleteAuctionImage">
+		delete from auction_image
+		where url=#{url}
+	</delete>
+	
+	<select id="getAuction" resultType="AuctionDto">
+		select *
+		from auction
+		where auction_id=#{auctionId}
+	</select>
+	
+	<select id="getAuctionImages" resultType="Image">
+		select AUCTION_IMAGE_ID, AUCTION_ID, URL, EXTENSION, MAIN_IMAGE
+		from auction_image
+		where auction_id=#{auctionId}
+		order by main_image desc, auction_image_id
+	</select>
+	
 </mapper>
