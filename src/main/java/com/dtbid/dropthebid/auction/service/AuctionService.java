@@ -1,17 +1,21 @@
 package com.dtbid.dropthebid.auction.service;
 
 import java.io.IOException;
-import java.util.UUID;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.ObjectMetadata;
-import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.dtbid.dropthebid.auction.model.AuctionDto;
 import com.dtbid.dropthebid.auction.model.AuctionForm;
 import com.dtbid.dropthebid.auction.model.Image;
 import com.dtbid.dropthebid.auction.repository.AuctionRepository;
+import com.dtbid.dropthebid.exception.ErrorCode;
+import com.dtbid.dropthebid.exception.GlobalException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -19,38 +23,49 @@ import lombok.RequiredArgsConstructor;
 public class AuctionService {
   
   private final AuctionRepository auctionRepository;
+  private final S3Service s3Service;
   
-  private final AmazonS3 s3Client;
+  private final ObjectMapper objectMapper;
   
-  @Value("${aws.bucketname}")
-  private String bucketName;
+  @Transactional
+  public void insertAuction(String newAuctionJson, List<MultipartFile> images, String mainImageIndex) {
+    try {
+      AuctionForm newAuction = objectMapper.readValue(newAuctionJson, AuctionForm.class);
+      
+      newAuction.setMemberId(2); // 로그인이랑 합치면 수정
+      
+      Timestamp currentTime = new Timestamp(System.currentTimeMillis());
+      
+      int comparison = currentTime.compareTo(newAuction.getStartDate());
+      
+      if (comparison > 0 || comparison == 0) {
+        newAuction.setAuctionStatusId(2); // 진행 중 
+      } else {
+        newAuction.setAuctionStatusId(1); // 시작 전 
+      }
 
-  public void insertAuction(AuctionForm newAuction) {
-    auctionRepository.insertAuction(newAuction);
+      auctionRepository.insertAuction(newAuction);
+
+      int auctionId = newAuction.getAuctionId();
+      
+      int mainImageIdx = Integer.parseInt(mainImageIndex);
+      boolean isMainImage;
+      
+      for (int i = 0; i < images.size(); i++) {
+        MultipartFile image = images.get(i);
+        isMainImage = (i == mainImageIdx);
+        insertAuctionImage(image, auctionId, isMainImage);
+      }
+
+    } catch(Exception e) {
+      e.printStackTrace();
+    }
+    
   }
   
   public void insertAuctionImage(MultipartFile file, int auctionId, Boolean isMainImage) throws IOException {
-    String originalFileName = file.getOriginalFilename();
     
-    
-    String fileExtension = "";
-    String savedFileName = "";
-    if (originalFileName != null && originalFileName.contains(".")) {
-      fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
-    }
-    UUID uuid = UUID.randomUUID();
-    savedFileName = uuid.toString() + fileExtension;
-    
-    String uploadPath = "auction/";
-    //파일경로: 업로드폴더 + uuid.확장자
-    String filePath = uploadPath + savedFileName;
-    
-    ObjectMetadata metadata = new ObjectMetadata();
-    metadata.setContentLength(file.getSize());
-    metadata.setContentType(file.getContentType());
-    
-    s3Client.putObject(new PutObjectRequest(bucketName, filePath, file.getInputStream(), metadata));
-    String url = s3Client.getUrl(bucketName, filePath).toString();
+    String url = s3Service.uploadImage(file);
     
     Image image = Image.builder()
         .auctionId(auctionId)
@@ -61,4 +76,66 @@ public class AuctionService {
         .build();
     auctionRepository.insertAuctionImage(image);
   }
+  
+  @Transactional
+  public void updateAuction(int auctionId, String modifiedAuctionJson, List<MultipartFile> newImages, String deletedImagesJson, String mainImageIndex) {
+    try {
+      boolean isMainImage;
+      int mainImageIdx;
+      
+      if (mainImageIndex != null) {
+        mainImageIdx = Integer.parseInt(mainImageIndex);
+      } else {
+        mainImageIdx = -1;
+      }
+      
+      if (modifiedAuctionJson != null) {
+        AuctionForm modifiedAuction = objectMapper.readValue(modifiedAuctionJson, AuctionForm.class);
+        
+        auctionRepository.updateAuction(modifiedAuction);
+      }
+      
+      if (newImages != null) {
+        for (int i = 0; i < newImages.size(); i++) {
+          MultipartFile newImage = newImages.get(i);
+          isMainImage = (i == mainImageIdx);
+          insertAuctionImage(newImage, auctionId, isMainImage);
+        }
+      }
+      
+      // 삭제된 사진 db, s3에서 삭제
+      if(deletedImagesJson != null) {
+        List<String> deletedImages = objectMapper.readValue(deletedImagesJson, new TypeReference<List<String>>() {});
+        
+        deletedImages.stream()
+          .forEach(imageUrl -> {
+          s3Service.deleteImage(imageUrl);
+          auctionRepository.deleteAuctionImage(imageUrl);
+        });
+      }
+    } catch(Exception e) {
+     e.printStackTrace();
+    }
+
+  }
+
+  public AuctionDto getAuction(int auctionId) {
+    Optional<AuctionDto> _auction = auctionRepository.getAuction(auctionId);
+    
+    if(_auction.isPresent()) {
+      return _auction.get();
+    } else {
+      throw new GlobalException(ErrorCode.NOT_EXIST_AUCTION);
+    }
+  }
+
+  public List<Image> getAuctionImages(int auctionId) {
+    List<Image> images = auctionRepository.getAuctionImages(auctionId);
+    
+    if(images.isEmpty())
+      throw new GlobalException(ErrorCode.NOT_EXIST_IMAGES);
+      
+    return images;
+  }
+  
 }
