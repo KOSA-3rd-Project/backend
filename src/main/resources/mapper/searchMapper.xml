@@ -3,7 +3,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.dtbid.dropthebid.search.repository.SearchRepository">
-  <select id="searchAuctions" resultType="AuctionDto">
+  <select id="searchAuctions" resultType="SearchDto">
     with auctions as (
       select
         a.auction_id,

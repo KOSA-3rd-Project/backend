@@ -4,13 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuctionDto {
+public class SearchDto {
   private Long auctionId;
   private String itemName;
   private Long startPrice;
