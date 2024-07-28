@@ -1,6 +1,6 @@
 package com.dtbid.dropthebid.search.controller;
 
-import com.dtbid.dropthebid.search.model.AuctionDto;
+import com.dtbid.dropthebid.search.model.SearchDto;
 import com.dtbid.dropthebid.search.service.SearchService;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class SearchController {
       @RequestParam(value = "q", defaultValue = "") String query,
       @RequestParam(value = "page", defaultValue = "1") int page) {
 
-    List<AuctionDto> auctions = searchService.searchAuctions(query, page);
+    List<SearchDto> auctions = searchService.searchAuctions(query, page);
     int totalCount = searchService.getTotalCount(query);
 
     Map<String, Object> response = new HashMap<>();
