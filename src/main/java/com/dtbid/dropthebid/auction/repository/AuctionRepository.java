@@ -1,6 +1,7 @@
 package com.dtbid.dropthebid.auction.repository;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -15,7 +16,9 @@ public interface AuctionRepository {
 
   void updateAuction(AuctionForm newAuction);
 
-  void updateAuction(int auctionId);
+  void updateAuctionStatus(int auctionId, int auctionStatusId);
+  
+  List<AuctionDto> findAll();
   
   Optional<AuctionDto> getAuction(int auctionId);
 

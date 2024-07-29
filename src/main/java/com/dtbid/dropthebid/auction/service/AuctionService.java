@@ -2,7 +2,6 @@ package com.dtbid.dropthebid.auction.service;
 
 import java.io.IOException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
