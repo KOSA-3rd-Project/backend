@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import com.dtbid.dropthebid.auction.model.AuctionDto;
 import com.dtbid.dropthebid.auction.model.AuctionForm;
+import com.dtbid.dropthebid.auction.model.BiddingDto;
 import com.dtbid.dropthebid.auction.model.Image;
 
 @Mapper
@@ -27,5 +29,11 @@ public interface AuctionRepository {
   void deleteAuctionImage(String url);
   
   ArrayList<Image> getAuctionImages(int auctionId);
+
+  void insertBidding(@Param("auctionId") int auctionId, @Param("price") int price, @Param("memberEmail") String memberEmail);
+
+  int getHighestBidPrice(int auctionId);
+  
+  List<BiddingDto> getBiddings(int auctionId);
 
 }

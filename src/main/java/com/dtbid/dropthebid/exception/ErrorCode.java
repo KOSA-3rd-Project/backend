@@ -17,7 +17,8 @@ public enum ErrorCode {
 
     // 이윤빈 - 경매
     NOT_EXIST_AUCTION("존재하지 않는 상품입니다."),
-    NOT_EXIST_IMAGES("이미지가 존재하지 않습니다.")
+    NOT_EXIST_IMAGES("이미지가 존재하지 않습니다."),
+    NOT_LOWER_BID_PRICE("현재 입찰가보다 적은 가격은 입력할 수 없습니다. ")
     ;
 
     private final String MESSAGE;

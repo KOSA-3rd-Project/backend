@@ -50,6 +50,7 @@ public class SecurityConfig {
                 .requestMatchers("/members/checks/refresh-token").permitAll()
                 .requestMatchers("/search").permitAll()
                 .requestMatchers("/ws/**").permitAll()
+                .requestMatchers("/auctions/**").permitAll()
                 .anyRequest().authenticated()                       // 그 외 모든 요청은 인증 요구
         )
 
