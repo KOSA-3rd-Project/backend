@@ -2,28 +2,29 @@ package com.dtbid.dropthebid.chat.controller;
 
 import java.sql.Timestamp;
 import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import com.dtbid.dropthebid.chat.model.ChatMessage;
 
 @Controller
 public class ChatController {
 
+    private final SimpMessagingTemplate messagingTemplate;
+
+    public ChatController(SimpMessagingTemplate messagingTemplate) {
+        this.messagingTemplate = messagingTemplate;
+    }
+
     @MessageMapping("/receive")
-    @SendTo("/send")
-    public ChatMessage SocketHandler(
-                                      // @AuthenticationPrincipal UserDetails userDetails,
-                                      ChatMessage chatMessage) {
-        // String membername = userDetails.getUsername();
-        // System.out.println("membername: " + membername);
-        
+    public void handleChatMessage(ChatMessage chatMessage) {
         Long chatRoomId = chatMessage.getChatRoomId();
-        Long memberId = 2L;
+        Long memberId = chatMessage.getMemberId();
         String message = chatMessage.getMessage();
         Timestamp createdAt = chatMessage.getCreatedAt();
-        
+
         ChatMessage result = new ChatMessage(chatRoomId, memberId, message, createdAt);
 
-        return result;
+        String destination = "/topic/" + chatRoomId;
+        messagingTemplate.convertAndSend(destination, result);
     }
 }
