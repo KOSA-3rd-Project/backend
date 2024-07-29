@@ -23,10 +23,16 @@ public class SearchController {
   @GetMapping("/search")
   public ResponseEntity<Map<String, Object>> searchAuctions(
       @RequestParam(value = "q", defaultValue = "") String query,
-      @RequestParam(value = "page", defaultValue = "1") int page) {
+      @RequestParam(value = "page", defaultValue = "1") int page,
+      @RequestParam(value = "category", required = false) String category,
+      @RequestParam(value = "condition", required = false) String condition,
+      @RequestParam(value = "minPrice", required = false) Integer minPrice,
+      @RequestParam(value = "maxPrice", required = false) Integer maxPrice,
+      @RequestParam(value = "sort", defaultValue = "latest") String sort) {
 
-    List<SearchDto> auctions = searchService.searchAuctions(query, page);
-    int totalCount = searchService.getTotalCount(query);
+    List<SearchDto> auctions = searchService.searchAuctions(query, page, category, condition,
+        minPrice, maxPrice, sort);
+    int totalCount = searchService.getTotalCount(query, category, condition, minPrice, maxPrice);
 
     Map<String, Object> response = new HashMap<>();
     response.put("auctions", auctions);
