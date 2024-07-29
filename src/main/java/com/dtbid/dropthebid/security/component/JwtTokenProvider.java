@@ -1,22 +1,28 @@
-package com.dtbid.dropthebid.security;
+package com.dtbid.dropthebid.security.component;
 
-import io.jsonwebtoken.*;
+import static com.dtbid.dropthebid.exception.ErrorCode.NOT_FIND_TOKEN;
+
+import com.dtbid.dropthebid.exception.GlobalException;
+import com.dtbid.dropthebid.security.model.CustomUserDetails;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.security.SignatureException;
+import java.security.Key;
+import java.util.Collections;
+import java.util.Date;
+import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-
-import java.security.Key;
-import java.util.Collections;
-import java.util.Date;
-import java.util.Objects;
 
 @Slf4j
 @Component
@@ -33,7 +39,8 @@ public class JwtTokenProvider {
 
 
   // 오동건 - secretKey 암호화
-  public JwtTokenProvider(@Value("${ACCESS_SECRET_KEY}") String accessSecretKey,
+  public JwtTokenProvider(
+      @Value("${ACCESS_SECRET_KEY}") String accessSecretKey,
       @Value("${REFRESH_SECRET_KEY}") String refreshSecretKey) {
 
     byte[] accessKeyBytes = Decoders.BASE64.decode(accessSecretKey);
@@ -42,7 +49,6 @@ public class JwtTokenProvider {
     byte[] refreshKeyBytes = Decoders.BASE64.decode(refreshSecretKey);
     refreshKey = Keys.hmacShaKeyFor(refreshKeyBytes);
   }
-
 
   // 오동건 - Access Token
   public String createAccessToken(Long id, String email, String authority) {
@@ -57,7 +63,6 @@ public class JwtTokenProvider {
     return createToken(id, email, authority, REFRESH_EXPIRE_TIME, refreshKey);
   }
 
-
   // 오동건 - 토큰 생성
   private String createToken(Long id, String email, String authority, int expireTime, Key key) {
 
@@ -70,7 +75,6 @@ public class JwtTokenProvider {
     return Jwts.builder().setClaims(claims).setIssuedAt(now)
         .setExpiration(new Date(now.getTime() + expireTime)).signWith(key).compact();
   }
-
 
   // 오동건 - Claims 의 정보 확인
   private Claims parseClaims(String token, boolean isAccessToken) {
@@ -96,7 +100,6 @@ public class JwtTokenProvider {
     }
   }
 
-
   // 오동건 - 토큰 유효 확인
   public boolean validateToken(String token, boolean isAccessToken) {
 
@@ -113,19 +116,30 @@ public class JwtTokenProvider {
     }
   }
 
+  // 오동건 - 토큰 생성 이메일
+  public String getTokenEmail(String token, boolean isAccessToken) {
+
+    try {
+      return parseClaims(token, isAccessToken).getSubject();
+    } catch (Exception ex) {
+      throw new GlobalException(NOT_FIND_TOKEN);
+    }
+  }
 
   // 오동건 - 사용자 인증 및 권한 부여
   public Authentication getAuthentication(String token, boolean isAccessToken) {
 
     Claims claims = parseClaims(token, isAccessToken);
 
+    Long id = Long.parseLong(Objects.requireNonNull(claims).getId());
     String email = Objects.requireNonNull(claims).getSubject();
     String role = claims.get("role", String.class);
 
     // 권한 목록 생성
     SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role);
 
-    UserDetails principal = new User(email, "", Collections.singletonList(authority));
+    CustomUserDetails principal =
+        new CustomUserDetails(id, email, "", Collections.singletonList(authority));
 
     // Spring Security 에서 사용자를 인증하는 데 사용
     return new UsernamePasswordAuthenticationToken(principal, null,
