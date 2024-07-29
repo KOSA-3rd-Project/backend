@@ -3,6 +3,7 @@ package com.dtbid.dropthebid.member.model.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+// 오동건
 @Getter
 @Setter
 public class MemberDto {
@@ -16,5 +17,5 @@ public class MemberDto {
     private String birthday;
     private String address;
     private String authority;
-    private String refresh_token;
+    private String refreshToken;
 }
