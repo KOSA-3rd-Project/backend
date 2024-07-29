@@ -2,6 +2,7 @@ package com.dtbid.dropthebid.auction.service;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import com.dtbid.dropthebid.auction.model.AuctionDto;
 import com.dtbid.dropthebid.auction.model.AuctionForm;
+import com.dtbid.dropthebid.auction.model.BiddingDto;
 import com.dtbid.dropthebid.auction.model.Image;
 import com.dtbid.dropthebid.auction.repository.AuctionRepository;
 import com.dtbid.dropthebid.exception.ErrorCode;
@@ -16,7 +18,9 @@ import com.dtbid.dropthebid.exception.GlobalException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class AuctionService {
@@ -135,6 +139,40 @@ public class AuctionService {
       throw new GlobalException(ErrorCode.NOT_EXIST_IMAGES);
       
     return images;
+  }
+
+  @Transactional
+  public void insertBidding(int auctionId, int price) {
+    try {
+        System.out.println("Method insertBidding called");
+        String memberEmail = "test@gmail.com"; // 수정
+        
+        int highestBid = auctionRepository.getHighestBidPrice(auctionId);
+        System.out.println("Highest Bid: " + highestBid);
+        
+        if (price > highestBid || highestBid == 0) {
+            auctionRepository.insertBidding(auctionId, price, memberEmail);
+        } else {
+            throw new GlobalException(ErrorCode.NOT_LOWER_BID_PRICE);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+  }
+
+
+  public List<BiddingDto> getBiddings(int auctionId) {
+    List<BiddingDto> biddings = new ArrayList<>();
+    
+    try { 
+      biddings = auctionRepository.getBiddings(auctionId);
+     
+      log.info("실행됨");
+    } catch (Exception e) { 
+      e.printStackTrace(); 
+    }
+
+    return biddings;
   }
   
 }
