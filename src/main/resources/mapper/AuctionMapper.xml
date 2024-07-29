@@ -57,9 +57,27 @@
 	</delete>
 	
 	<select id="getAuction" resultType="AuctionDto">
-		select *
-		from auction
-		where auction_id=#{auctionId}
+		SELECT 
+	        a.*,
+	        c.category_name AS category_name,
+	        ps.status_name AS auction_product_status_name,
+	        s.auction_status_name AS auction_status_name
+	    FROM 
+	        auction a
+	    JOIN 
+	        category c 
+	    ON 
+	        a.category_id = c.category_id
+	    JOIN 
+	        auction_product_status ps
+	    ON 
+	        a.auction_product_status_id = ps.auction_product_status_id
+	    JOIN 
+	        auction_status s
+	    ON 
+	        a.auction_status_id = s.auction_status_id
+	    WHERE 
+	        a.auction_id = #{auctionId}
 	</select>
 	
 	<select id="getAuctionImages" resultType="Image">
@@ -68,5 +86,5 @@
 		where auction_id=#{auctionId}
 		order by main_image desc, auction_image_id
 	</select>
-	
+
 </mapper>

@@ -19,8 +19,11 @@ public class AuctionDto {
   private int auctionId;
   private int memberId;
   private int categoryId;
+  private String categoryName;
   private int auctionStatusId;
+  private String auctionStatusName;
   private int auctionProductStatusId;
+  private String auctionProductStatusName;
   private String itemName;
   private String description;
   private String location;
