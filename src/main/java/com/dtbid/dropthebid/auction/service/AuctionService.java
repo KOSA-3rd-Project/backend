@@ -147,10 +147,16 @@ public class AuctionService {
         System.out.println("Method insertBidding called");
         String memberEmail = "test@gmail.com"; // 수정
         
-        int highestBid = auctionRepository.getHighestBidPrice(auctionId);
+        Optional<BiddingDto> highestBid = auctionRepository.getHighestBidding(auctionId);
         System.out.println("Highest Bid: " + highestBid);
         
-        if (price > highestBid || highestBid == 0) {
+        int highestBidPrice = 0;
+        
+        if (highestBid.isPresent()) {
+          highestBidPrice = highestBid.get().getPrice();
+        }
+        
+        if (price > highestBidPrice || highestBidPrice == 0) {
             auctionRepository.insertBidding(auctionId, price, memberEmail);
         } else {
             throw new GlobalException(ErrorCode.NOT_LOWER_BID_PRICE);
@@ -174,5 +180,14 @@ public class AuctionService {
 
     return biddings;
   }
-  
+
+  public void updateAuctionStatus(int auctionId) {
+    try {
+      auctionRepository.updateAuctionStatus(auctionId, 5);
+    } catch(Exception e) {
+      e.printStackTrace(); 
+    }
+    
+  }
+
 }

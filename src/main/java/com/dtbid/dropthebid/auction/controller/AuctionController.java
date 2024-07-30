@@ -8,20 +8,20 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import com.dtbid.dropthebid.auction.model.AuctionDto;
+import com.dtbid.dropthebid.auction.model.AuctionForm;
 import com.dtbid.dropthebid.auction.model.BiddingDto;
 import com.dtbid.dropthebid.auction.model.Image;
-import com.dtbid.dropthebid.auction.repository.AuctionRepository;
 import com.dtbid.dropthebid.auction.service.AuctionService;
 import com.dtbid.dropthebid.exception.GlobalException;
 import lombok.RequiredArgsConstructor;
@@ -139,4 +139,21 @@ public class AuctionController {
        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
      }
    }
+   
+   @DeleteMapping("/{id}")
+   public ResponseEntity<String> deleteAuction(@PathVariable("id") int auctionId) {
+     try {
+       if (auctionService.getAuction(auctionId).getAuctionStatusId() == 1) {
+         auctionService.updateAuctionStatus(auctionId);
+         return new ResponseEntity<>("auction cancle success", HttpStatus.OK);
+       } else {
+         return new ResponseEntity<>("경매 시작 전인 상품만 취소할 수 있습니다.", HttpStatus.BAD_REQUEST);
+       }
+      
+     } catch (Exception e) {
+       e.printStackTrace();
+       return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+     }
+   }
+   
 }

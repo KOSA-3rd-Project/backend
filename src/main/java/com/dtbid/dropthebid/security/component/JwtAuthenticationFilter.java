@@ -30,8 +30,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
   protected boolean shouldNotFilter(HttpServletRequest request) {
 
     String[] api = {"/members/signin", "/members/signup", "/auctions/month", "/auctions/popular",
-        "/auctions/new", "/search", "/ws", "/auctions/month", "/auctions/popular",
-        "/auctions/new", "/search","/members/checks/refresh-token", "/auctions/19", "/auctions/19/bids", "/auctions/18/bids"};
+        "/auctions/new", "/search", "/ws", "/members/checks/refresh-token", 
+        "/auctions/19", "/auctions/19/bids", "/auctions/18/bids", "/auctions/test"};
 
     String path = request.getRequestURI();
 
