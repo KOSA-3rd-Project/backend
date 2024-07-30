@@ -28,11 +28,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
   @Override
   protected boolean shouldNotFilter(HttpServletRequest request) {
 
-    String[] api = {"/members/signin", "/members/signup", 
-        "/auctions/month", "/auctions/popular", "/auctions/new", "/search",
-        "/members/checks/refresh-token", 
-        "/auction", "/auctions/19", "/auctions/19/bids", "/auctions/18/bids",
-        "/ws", "/chat"
+    String[] api = {"/members/signin", "/members/signup", "/auctions/month", "/auctions/popular",
+         "/auctions/new", "/search", "/ws", "/members/checks/refresh-token", 
+        "/auctions", "/auctions/19", "/auctions/19/bids", "/auctions/18/bids", "/chat"
     };
 
     String path = request.getRequestURI();

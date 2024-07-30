@@ -95,8 +95,15 @@
 	   SYSDATE)
 	</insert>
 	
-	<select id="getHighestBidPrice" resultType="int">
-  		SELECT NVL(MAX(PRICE), 0) FROM bidding WHERE AUCTION_ID = #{auctionId}
+	<select id="getHighestBidding" resultType="BiddingDto">
+	    SELECT *
+	    FROM (
+	        SELECT *
+	        FROM bidding
+	        WHERE AUCTION_ID = #{auctionId}
+	        ORDER BY PRICE DESC
+	    )
+	    WHERE ROWNUM = 1
 	</select>
 	
 	<select id="getBiddings" parameterType="int" resultType="BiddingDto">
@@ -105,4 +112,19 @@
 		where auction_id = #{auctionId}
 		order by price desc
 	</select>
+	
+	<select id="getAll">
+		select *
+		from auction
+	</select>
+	
+	<update id="updateAuctionStatus">
+		update auction
+		set auction_status_id = #{auctionStatusId}
+		where auction_id = #{auctionId}
+	</update>
+	
+	<insert id="insertBidingSuccess">
+		insert into bidding_success(bid_id) values (#{bidId})
+	</insert>
 </mapper>

@@ -18,9 +18,9 @@ public interface AuctionRepository {
 
   void updateAuction(AuctionForm newAuction);
 
-  void updateAuctionStatus(int auctionId, int auctionStatusId);
+  void updateAuctionStatus(@Param("auctionId") int auctionId, @Param("auctionStatusId") int auctionStatusId);
   
-  List<AuctionDto> findAll();
+  List<AuctionDto> getAll();
   
   Optional<AuctionDto> getAuction(int auctionId);
 
@@ -32,8 +32,11 @@ public interface AuctionRepository {
 
   void insertBidding(@Param("auctionId") int auctionId, @Param("price") int price, @Param("memberEmail") String memberEmail);
 
-  int getHighestBidPrice(int auctionId);
+  Optional<BiddingDto> getHighestBidding(int auctionId);
   
   List<BiddingDto> getBiddings(int auctionId);
+
+  void insertBidingSuccess(int bidId);
+
 
 }
