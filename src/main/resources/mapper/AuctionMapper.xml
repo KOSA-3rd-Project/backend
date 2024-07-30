@@ -87,4 +87,44 @@
 		order by main_image desc, auction_image_id
 	</select>
 
+	<insert id="insertBidding" parameterType="map">
+		insert into bidding(MEMBER_ID, AUCTION_ID, PRICE, TIME) values (
+		(SELECT MEMBER_ID FROM member WHERE EMAIL = #{memberEmail}),
+	    #{auctionId},
+	    #{price},
+	   SYSDATE)
+	</insert>
+	
+	<select id="getHighestBidding" resultType="BiddingDto">
+	    SELECT *
+	    FROM (
+	        SELECT *
+	        FROM bidding
+	        WHERE AUCTION_ID = #{auctionId}
+	        ORDER BY PRICE DESC
+	    )
+	    WHERE ROWNUM = 1
+	</select>
+	
+	<select id="getBiddings" parameterType="int" resultType="BiddingDto">
+		select bid_id, member_id, price, time
+		from bidding
+		where auction_id = #{auctionId}
+		order by price desc
+	</select>
+	
+	<select id="getAll">
+		select *
+		from auction
+	</select>
+	
+	<update id="updateAuctionStatus">
+		update auction
+		set auction_status_id = #{auctionStatusId}
+		where auction_id = #{auctionId}
+	</update>
+	
+	<insert id="insertBidingSuccess">
+		insert into bidding_success(bid_id) values (#{bidId})
+	</insert>
 </mapper>

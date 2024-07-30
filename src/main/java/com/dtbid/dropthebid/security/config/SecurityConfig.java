@@ -1,7 +1,5 @@
 package com.dtbid.dropthebid.security.config;
 
-import com.dtbid.dropthebid.security.component.JwtAuthenticationFilter;
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,6 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfigurationSource;
+import com.dtbid.dropthebid.security.component.JwtAuthenticationFilter;
+import lombok.RequiredArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
@@ -40,16 +40,17 @@ public class SecurityConfig {
 
         // 요청 권한 설정
         .authorizeHttpRequests(
-            authorizeRequests -> authorizeRequests.requestMatchers("/members/signup")
-                .permitAll()   // 회원가입 경로 허용
+            authorizeRequests -> authorizeRequests
+                .requestMatchers("/members/signup").permitAll()   // 회원가입 경로 허용
                 .requestMatchers("/members/signin").permitAll()   // 로그인 경로 허용
                 .requestMatchers("/auctions/month").permitAll()
                 .requestMatchers("/auctions/popular").permitAll()
                 .requestMatchers("/auctions/new").permitAll()
                 .requestMatchers("/search").permitAll()
                 .requestMatchers("/members/checks/refresh-token").permitAll()
-                .requestMatchers("/search").permitAll()
-                .requestMatchers("/ws/**").permitAll()
+                .requestMatchers("/ws").permitAll()
+                .requestMatchers("/chat").permitAll()
+                .requestMatchers("/auctions/**").permitAll()
                 .anyRequest().authenticated()                       // 그 외 모든 요청은 인증 요구
         )
 

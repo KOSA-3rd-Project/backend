@@ -7,11 +7,11 @@ import org.springframework.stereotype.Controller;
 import com.dtbid.dropthebid.chat.model.ChatMessage;
 
 @Controller
-public class ChatController {
+public class ChatMessageController {
 
     private final SimpMessagingTemplate messagingTemplate;
 
-    public ChatController(SimpMessagingTemplate messagingTemplate) {
+    public ChatMessageController(SimpMessagingTemplate messagingTemplate) {
         this.messagingTemplate = messagingTemplate;
     }
 
