@@ -1,5 +1,12 @@
 package com.dtbid.dropthebid.security.component;
 
+import java.io.IOException;
+import java.util.Arrays;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+import org.springframework.web.filter.OncePerRequestFilter;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.JwtException;
 import jakarta.servlet.FilterChain;
@@ -7,14 +14,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
-import org.springframework.web.filter.OncePerRequestFilter;
-
-import java.io.IOException;
-import java.util.Arrays;
 
 @Component
 @RequiredArgsConstructor
@@ -30,8 +29,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
   protected boolean shouldNotFilter(HttpServletRequest request) {
 
     String[] api = {"/members/signin", "/members/signup", "/auctions/month", "/auctions/popular",
-        "/auctions/new", "/search", "/ws", "/members/checks/refresh-token", 
-        "/auctions/19", "/auctions/19/bids", "/auctions/18/bids", "/auctions/test"};
+         "/auctions/new", "/search", "/ws", "/members/checks/refresh-token", 
+        "/auctions", "/auctions/19", "/auctions/19/bids", "/auctions/18/bids", "/chat"
+    };
 
     String path = request.getRequestURI();
 
@@ -48,7 +48,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
       // 토큰이 없을 경우
       if (!StringUtils.hasText(token)) {
-        response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        // response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         return;
       }
 
@@ -59,7 +60,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         Authentication authentication = jwtTokenProvider.getAuthentication(token, true);
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-      }
+      } 
     } catch (ExpiredJwtException ex) {
       // 만료 에러 엑세스 토큰 확인 필요
       response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
