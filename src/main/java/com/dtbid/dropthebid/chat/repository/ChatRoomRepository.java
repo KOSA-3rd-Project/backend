@@ -8,5 +8,4 @@ public interface ChatRoomRepository {
 
     void insertChatRoom(ChatRoom chatRoom);
     
-    Integer getChatRoomId(Integer auctionId, Integer memberId);
 }
