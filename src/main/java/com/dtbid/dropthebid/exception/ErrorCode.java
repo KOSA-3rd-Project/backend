@@ -10,6 +10,7 @@ public enum ErrorCode {
 
     // 회원
     ALREADY_MEMBER_EMAIL("이미 가입된 이메일 입니다."),
+    ALREADY_NICKNAME("중복된 닉네임 입니다."),
     UNABLE_LOGIN("아이디 또는 비밀번호가 잘못 되었습니다."),
 
     // 토큰
