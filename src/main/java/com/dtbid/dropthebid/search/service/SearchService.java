@@ -12,12 +12,14 @@ public class SearchService {
 
   private final SearchRepository searchRepository;
 
-  public List<SearchDto> searchAuctions(String query, int page) {
+  public List<SearchDto> searchAuctions(String query, int page, String category, String condition,
+      Integer minPrice, Integer maxPrice, String sort) {
     int offset = (page - 1) * 9;
-    return searchRepository.searchAuctions(query, offset);
+    return searchRepository.searchAuctions(query, offset, category, condition, minPrice, maxPrice, sort);
   }
 
-  public int getTotalCount(String query) {
-    return searchRepository.getTotalCount(query);
+  public int getTotalCount(String query, String category, String condition,
+      Integer minPrice, Integer maxPrice) {
+    return searchRepository.getTotalCount(query, category, condition, minPrice, maxPrice);
   }
 }
