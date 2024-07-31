@@ -16,4 +16,5 @@ public class AuctionSummaryDto {
   private Long startPrice;
   private Long highestBid;
   private LocalDateTime dueDate;
+  private String url;
 }

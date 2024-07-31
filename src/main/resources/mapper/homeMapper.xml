@@ -7,19 +7,26 @@
 
 <mapper namespace="com.dtbid.dropthebid.home.repository.HomeRepository">
   <select id="getPopularAuctionList" resultType="AuctionSummaryDto">
-    select auction_id, item_name, start_price, due_date, highest_bid
+    select auction_id, item_name, start_price, due_date, highest_bid, url
     from (select a.auction_id,
                  a.item_name,
                  a.start_price,
                  a.due_date,
                  max(b.price)        as highest_bid,
-                 count(b.auction_id) as bid_count
+                 count(b.auction_id) as bid_count,
+                 i.url
           from auction a
                  join bidding b on a.auction_id = b.auction_id
-          where a.due_date > CURRENT_DATE
-          group by a.auction_id, a.item_name, a.start_price, a.due_date
+                 join auction_image i on a.auction_id = i.auction_id
+                 join auction_status s on a.auction_status_id = s.auction_status_id
+          where (
+                  a.due_date > CURRENT_DATE
+                    and i.main_image = 'Y'
+                    and s.auction_status_name not in ('낙찰', '유찰', '취소')
+                  )
+          group by a.auction_id, a.item_name, a.start_price, a.due_date, i.url
           order by bid_count desc)
-      fetch first 10 rows only
+      fetch first 12 rows only
   </select>
 
   <select id="getNewAuctionList" resultType="AuctionSummaryDto">
@@ -27,12 +34,19 @@
            a.item_name,
            a.start_price,
            a.due_date,
-           coalesce(max(b.price), 0) as highest_bid
+           coalesce(max(b.price), 0) as highest_bid,
+           i.url
     from auction a
            left join bidding b on a.auction_id = b.auction_id
-    where a.due_date > current_date
-    group by a.auction_id, a.item_name, a.start_price, a.due_date, a.created_at
+           join auction_image i on a.auction_id = i.auction_id
+           join auction_status s on a.auction_status_id = s.auction_status_id
+    where (
+            a.due_date > current_date
+              and i.main_image = 'Y'
+              and s.auction_status_name not in ('낙찰', '유찰', '취소')
+            )
+    group by a.auction_id, a.item_name, a.start_price, a.due_date, a.created_at, i.url
     order by a.created_at desc
-      fetch first 10 rows only
+      fetch first 12 rows only
   </select>
 </mapper>
