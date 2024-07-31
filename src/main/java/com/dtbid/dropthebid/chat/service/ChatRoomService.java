@@ -11,7 +11,7 @@ public class ChatRoomService {
     @Autowired
     private ChatRoomRepository chatRoomRepository;
 
-    public Integer createChatRoom(ChatRoom chatRoom) {
+    public Long createChatRoom(ChatRoom chatRoom) {
         try {
             chatRoomRepository.insertChatRoom(chatRoom);
             return chatRoom.getChatRoomId();
@@ -20,7 +20,4 @@ public class ChatRoomService {
         }
     }
 
-    public Integer findChatRoomId(Integer auctionId, Integer memberId) {
-        return chatRoomRepository.getChatRoomId(auctionId, memberId);
-    }
 }
