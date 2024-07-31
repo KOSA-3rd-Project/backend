@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ChatRoom {
     
-    private Integer chatRoomId; // 데이터베이스에서 자동 생성된 값이 매핑됨
-    private Integer auctionId;
-    private Integer memberId;
+    private Long chatRoomId; // 데이터베이스에서 자동 생성된 값이 매핑됨
+    private Long auctionId;
+    private Long memberId;
+    
 }
