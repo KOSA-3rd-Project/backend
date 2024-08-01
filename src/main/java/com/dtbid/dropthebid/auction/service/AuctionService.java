@@ -186,8 +186,11 @@ public class AuctionService {
       auctionRepository.updateAuctionStatus(auctionId, 5);
     } catch(Exception e) {
       e.printStackTrace(); 
-    }
-    
+    }  
+  }
+  
+  public Optional<BiddingDto> getHighestBidding(int auctionId) {
+     return auctionRepository.getHighestBidding(auctionId);
   }
 
 }

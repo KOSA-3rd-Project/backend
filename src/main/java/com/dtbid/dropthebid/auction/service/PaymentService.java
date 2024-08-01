@@ -12,6 +12,9 @@ public class PaymentService {
     private PaymentRepository paymentRepository;
 
     public void savePayment(Payment payment) {
+        // Add any additional logic here if needed (e.g., validation)
         paymentRepository.insertPayment(payment);
     }
+
+    // Additional methods for handling payments can be added here
 }
