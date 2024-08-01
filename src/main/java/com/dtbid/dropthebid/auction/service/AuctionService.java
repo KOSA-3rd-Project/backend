@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,6 +16,7 @@ import com.dtbid.dropthebid.auction.model.Image;
 import com.dtbid.dropthebid.auction.repository.AuctionRepository;
 import com.dtbid.dropthebid.exception.ErrorCode;
 import com.dtbid.dropthebid.exception.GlobalException;
+import com.dtbid.dropthebid.security.model.CustomUserDetails;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -31,11 +33,11 @@ public class AuctionService {
   private final ObjectMapper objectMapper;
   
   @Transactional
-  public void insertAuction(String newAuctionJson, List<MultipartFile> images, String mainImageIndex) {
+  public void insertAuction(String newAuctionJson, List<MultipartFile> images, String mainImageIndex, Long memberId) {
     try {
       AuctionForm newAuction = objectMapper.readValue(newAuctionJson, AuctionForm.class);
       
-      newAuction.setMemberId(2); // 로그인이랑 합치면 수정
+      newAuction.setMemberId(memberId); // 로그인이랑 합치면 수정
       
       Timestamp currentTime = new Timestamp(System.currentTimeMillis());
       

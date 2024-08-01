@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,11 +20,11 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import com.dtbid.dropthebid.auction.model.AuctionDto;
-import com.dtbid.dropthebid.auction.model.AuctionForm;
 import com.dtbid.dropthebid.auction.model.BiddingDto;
 import com.dtbid.dropthebid.auction.model.Image;
 import com.dtbid.dropthebid.auction.service.AuctionService;
 import com.dtbid.dropthebid.exception.GlobalException;
+import com.dtbid.dropthebid.security.model.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -37,7 +38,8 @@ public class AuctionController {
   @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
   @Transactional
   public ResponseEntity<String> registerAuction(@RequestPart("newAuction") String newAuctionJson,
-      @RequestPart("images") List<MultipartFile> images, @RequestPart("mainImageIndex") String mainImageIndex) {
+      @RequestPart("images") List<MultipartFile> images, @RequestPart("mainImageIndex") String mainImageIndex, 
+      @AuthenticationPrincipal CustomUserDetails customUserDetails) {
     log.info("json " + newAuctionJson);
 
     if (images.isEmpty())
@@ -48,7 +50,7 @@ public class AuctionController {
     log.info("메인이미지" + mainImageIndex);
 
     try {
-      auctionService.insertAuction(newAuctionJson, images, mainImageIndex);
+      auctionService.insertAuction(newAuctionJson, images, mainImageIndex, customUserDetails.getId());
 
       return new ResponseEntity<>("auction register success", HttpStatus.CREATED);
     } catch (Exception e) {
