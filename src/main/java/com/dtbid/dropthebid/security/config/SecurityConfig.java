@@ -55,8 +55,9 @@ public class SecurityConfig {
                 .requestMatchers("/chat").permitAll()
                 .requestMatchers("/chat/create").permitAll()
                 .requestMatchers("/chat/**").permitAll()
-                .requestMatchers("/auctions/**").permitAll()
-                .anyRequest().authenticated()                       // 그 외 모든 요청은 인증 요구
+                .requestMatchers("/auctions/all/*").permitAll()                
+//                .anyRequest().authenticated()                       // 그 외 모든 요청은 인증 요구
+                .anyRequest().permitAll()
         )
 
         .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

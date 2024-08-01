@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,11 +20,11 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import com.dtbid.dropthebid.auction.model.AuctionDto;
-import com.dtbid.dropthebid.auction.model.AuctionForm;
 import com.dtbid.dropthebid.auction.model.BiddingDto;
 import com.dtbid.dropthebid.auction.model.Image;
 import com.dtbid.dropthebid.auction.service.AuctionService;
 import com.dtbid.dropthebid.exception.GlobalException;
+import com.dtbid.dropthebid.security.model.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,13 +32,14 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/auctions")
-public class AuctionController {
+public class AuctionController { // 이윤빈 - 경매 등록, 조회, 취소, 입찰, 입찰 내역 조회
   private final AuctionService auctionService;
 
   @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
   @Transactional
-  public ResponseEntity<String> registerAuction(@RequestPart("newAuction") String newAuctionJson,
-      @RequestPart("images") List<MultipartFile> images, @RequestPart("mainImageIndex") String mainImageIndex) {
+  public ResponseEntity<?> registerAuction(@RequestPart("newAuction") String newAuctionJson,
+      @RequestPart("images") List<MultipartFile> images, @RequestPart("mainImageIndex") String mainImageIndex, 
+      @AuthenticationPrincipal CustomUserDetails customUserDetails) { // 경매 상품 등록 
     log.info("json " + newAuctionJson);
 
     if (images.isEmpty())
@@ -48,17 +50,17 @@ public class AuctionController {
     log.info("메인이미지" + mainImageIndex);
 
     try {
-      auctionService.insertAuction(newAuctionJson, images, mainImageIndex);
+      int auctionId = auctionService.insertAuction(newAuctionJson, images, mainImageIndex, customUserDetails.getId());
 
-      return new ResponseEntity<>("auction register success", HttpStatus.CREATED);
+      return new ResponseEntity<>(auctionId, HttpStatus.CREATED);
     } catch (Exception e) {
       e.printStackTrace();
       return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
   
-  @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<Map<String, Object>> getAuction(@PathVariable("id") int auctionId) {
+  @GetMapping(value = "/all/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<Map<String, Object>> getAuction(@PathVariable("id") int auctionId) { // 경매 정보 가져오기
       try {
           AuctionDto auction = auctionService.getAuction(auctionId);
           List<Image> auctionImages = auctionService.getAuctionImages(auctionId);
@@ -94,7 +96,7 @@ public class AuctionController {
       @RequestPart(value="modifiedAuction", required=false) String modifiedAuctionJson,
       @RequestPart(value="newImages", required=false) List<MultipartFile> newImages,
       @RequestPart(value="deletedImages", required=false) String deletedImagesJson,
-      @RequestPart(value="mainImageIndex", required=false) String mainImageIndex) {
+      @RequestPart(value="mainImageIndex", required=false) String mainImageIndex) { // 경매 상품 수정
     log.info("json " + modifiedAuctionJson);
     log.info("mainImageIndex " + mainImageIndex);
     
@@ -109,19 +111,26 @@ public class AuctionController {
   }
 
    @PostMapping("/{id}/bids")
-   public ResponseEntity<String> biddingAuction(@PathVariable("id") int auctionId, @RequestParam("price") int price){
+   public ResponseEntity<String> biddingAuction(
+       @PathVariable("id") int auctionId, @RequestParam("price") int price, 
+       @AuthenticationPrincipal CustomUserDetails customUserDetails){ // 입찰하기
+     //){
      try {
-       auctionService.insertBidding(auctionId, price);
+       System.out.println("????");
+       System.out.println(customUserDetails.getId());
+       auctionService.insertBidding(auctionId, price, customUserDetails.getUsername());
+       //auctionService.insertBidding(auctionId, price, "yunbin@gmail.com");
        
        return new ResponseEntity<>("bidding success", HttpStatus.OK);
      } catch (GlobalException e) {
-       return new ResponseEntity<>("현재 입찰가보다 낮은 금액은 입력할 수 없습니다.", HttpStatus.BAD_REQUEST);
+       return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
      } catch (Exception e) {
+       e.printStackTrace();
        return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
      }
    }
    
-   @GetMapping("/{id}/bids")
+   @GetMapping("/all/{id}/bids")
    public ResponseEntity<Map<String, Object>> getBiddings(@PathVariable("id") int auctionId){
      try {
        List<BiddingDto> biddings = auctionService.getBiddings(auctionId);

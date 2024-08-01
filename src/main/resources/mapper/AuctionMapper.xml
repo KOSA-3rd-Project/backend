@@ -4,13 +4,13 @@
     
 <mapper namespace="com.dtbid.dropthebid.auction.repository.AuctionRepository">
 	<insert id="insertAuction">
-		INSERT INTO auction(member_id, category_id, auction_status_id, auction_product_status_id, item_name, description, 
+		INSERT INTO auction(auction_id, member_id, category_id, auction_status_id, auction_product_status_id, item_name, description, 
 		location, start_price, start_date, due_date, created_at, updated_at) VALUES (
-		#{memberId}, #{categoryId}, #{auctionStatusId}, #{auctionProductStatusId}, #{itemName}, #{description},
+		auction_seq.NEXTVAL, #{memberId}, #{categoryId}, #{auctionStatusId}, #{auctionProductStatusId}, #{itemName}, #{description},
 		#{location}, #{startPrice}, #{startDate}, #{dueDate}, SYSDATE, SYSDATE)
 		
 		<selectKey keyProperty="auctionId" resultType="int" order="AFTER">
-			select ISEQ$$_80453.CURRVAL FROM DUAL
+			select auction_seq.CURRVAL FROM DUAL
 		</selectKey>
 	</insert>
 	
@@ -107,10 +107,22 @@
 	</select>
 	
 	<select id="getBiddings" parameterType="int" resultType="BiddingDto">
-		select bid_id, member_id, price, time
-		from bidding
-		where auction_id = #{auctionId}
-		order by price desc
+		SELECT
+	        b.bid_id AS bid_id,
+	        b.member_id AS member_id,
+	        m.email AS member_email,
+	        b.price AS price,
+	        b.time AS time
+	    FROM
+	        bidding b
+	    JOIN
+	        member m
+	    ON
+	        b.member_id = m.member_id
+	    WHERE
+	        b.auction_id = #{auctionId}
+	    ORDER BY
+	        b.price DESC
 	</select>
 	
 	<select id="getAll">

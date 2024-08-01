@@ -17,7 +17,7 @@ import lombok.ToString;
 @Builder
 public class AuctionForm {
   private int auctionId;
-  private int memberId;
+  private Long memberId;
   private int categoryId;
   private int auctionStatusId;
   private int auctionProductStatusId;

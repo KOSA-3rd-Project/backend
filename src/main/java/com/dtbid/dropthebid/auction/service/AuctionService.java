@@ -31,11 +31,11 @@ public class AuctionService {
   private final ObjectMapper objectMapper;
   
   @Transactional
-  public void insertAuction(String newAuctionJson, List<MultipartFile> images, String mainImageIndex) {
+  public int insertAuction(String newAuctionJson, List<MultipartFile> images, String mainImageIndex, Long memberId) {
     try {
       AuctionForm newAuction = objectMapper.readValue(newAuctionJson, AuctionForm.class);
       
-      newAuction.setMemberId(2); // 로그인이랑 합치면 수정
+      newAuction.setMemberId(memberId); 
       
       Timestamp currentTime = new Timestamp(System.currentTimeMillis());
       
@@ -59,9 +59,10 @@ public class AuctionService {
         isMainImage = (i == mainImageIdx);
         insertAuctionImage(image, auctionId, isMainImage);
       }
-
+      return auctionId;
     } catch(Exception e) {
       e.printStackTrace();
+      return -1;
     }
     
   }
@@ -142,10 +143,9 @@ public class AuctionService {
   }
 
   @Transactional
-  public void insertBidding(int auctionId, int price) {
+  public void insertBidding(int auctionId, int price, String memberEmail) {
     try {
         System.out.println("Method insertBidding called");
-        String memberEmail = "test@gmail.com"; // 수정
         
         Optional<BiddingDto> highestBid = auctionRepository.getHighestBidding(auctionId);
         System.out.println("Highest Bid: " + highestBid);
