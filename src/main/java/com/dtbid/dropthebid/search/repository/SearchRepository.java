@@ -6,6 +6,9 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+/**
+ * 작성자: 이주윤
+ */
 @Repository
 @Mapper
 public interface SearchRepository {
