@@ -31,7 +31,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     String[] api = {"/members/signin", "/members/signup", "/auctions/month", "/auctions/popular",
          "/auctions/new", "/search", "/members/checks/refresh-token", 
         "/auctions", "/auctions/19", "/auctions/19/bids", "/auctions/18/bids", 
-        "/payment", "/payment/**"
+        "/auctions/payment", "/payment", "/payment/**"
         // "/chat", "/chat/create", "/chat/**", "/ws", "/ws/**"
     };
 

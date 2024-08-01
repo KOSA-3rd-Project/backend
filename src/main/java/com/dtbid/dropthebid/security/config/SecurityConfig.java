@@ -55,7 +55,9 @@ public class SecurityConfig {
                 .requestMatchers("/chat").permitAll()
                 .requestMatchers("/chat/create").permitAll()
                 .requestMatchers("/chat/**").permitAll()
+                .requestMatchers("/auction/**").permitAll()
                 .requestMatchers("/auctions/**").permitAll()
+                .requestMatchers("/auctions/payment").permitAll()
                 .anyRequest().authenticated()                       // 그 외 모든 요청은 인증 요구
         )
 
