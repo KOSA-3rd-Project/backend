@@ -8,15 +8,15 @@
     <!-- 오동건 - Email 중복 여부 -->
     <select id="countByMemberEmail" parameterType="string" resultType="Long">
         SELECT COUNT(EMAIL) CNT
-          FROM MEMBER
-         WHERE EMAIL = #{email}
+        FROM MEMBER
+        WHERE EMAIL = #{email}
     </select>
 
     <!-- 오동건 - NickName 중복 여부 -->
     <select id="countByNicName" parameterType="string" resultType="Long">
         SELECT COUNT(NICKNAME) CNT
-          FROM MEMBER
-         WHERE NICKNAME = #{nickname}
+        FROM MEMBER
+        WHERE NICKNAME = #{nickname}
     </select>
 
     <!-- 오동건 - 사용자아이디기준 사용자 검색 -->
@@ -31,8 +31,9 @@
              , ADDRESS
              , AUTHORITY
              , REFRESH_TOKEN
-          FROM MEMBER
-         WHERE MEMBER_ID = #{memberId}
+             , DELETE_FLAG
+        FROM MEMBER
+        WHERE MEMBER_ID = #{memberId}
     </select>
 
     <!-- 오동건 - 이메일기준 사용자 검색 -->
@@ -47,36 +48,52 @@
              , ADDRESS
              , AUTHORITY
              , REFRESH_TOKEN
-          FROM MEMBER
-         WHERE EMAIL = #{email}
+             , DELETE_FLAG
+        FROM MEMBER
+        WHERE EMAIL = #{email}
     </select>
 
     <!-- 오동건 - 회원가입 -->
     <insert id="insertMember" parameterType="com.dtbid.dropthebid.member.model.form.SignUpForm">
         INSERT
-          INTO MEMBER
-             ( EMAIL, PASSWORD, NAME, NICKNAME, SEX, BIRTHDAY, ADDRESS)
+        INTO MEMBER
+            ( EMAIL, PASSWORD, NAME, NICKNAME, SEX, BIRTHDAY, ADDRESS)
         VALUES
-             ( #{email}, #{password}, #{name}, #{nickname}, #{sex}, #{birthday}, #{address})
+            ( #{email}, #{password}, #{name}, #{nickname}, #{sex}, #{birthday}, #{address})
     </insert>
 
 
     <!-- 오동건 - Refresh Token 수정  -->
     <update id="updateMemberToken">
         UPDATE MEMBER
-           SET REFRESH_TOKEN = #{refreshToken}
-         WHERE MEMBER_ID = #{memberId}
+        SET REFRESH_TOKEN = #{refreshToken}
+        WHERE MEMBER_ID = #{memberId}
     </update>
 
     <!--  오동건 - 회원 정보 수정  -->
     <update id="updateMemberInfo">
         UPDATE MEMBER
-           SET PASSWORD = #{signUpForm.password}
-             , NAME     = #{signUpForm.name}
-             , SEX      = #{signUpForm.sex}
-             , BIRTHDAY = #{signUpForm.birthday}
-             , ADDRESS  = #{signUpForm.address}
-         WHERE MEMBER_ID = #{memberId}
+        SET PASSWORD = #{signUpForm.password}
+          , NAME     = #{signUpForm.name}
+          , SEX      = #{signUpForm.sex}
+          , BIRTHDAY = #{signUpForm.birthday}
+          , ADDRESS  = #{signUpForm.address}
+        WHERE MEMBER_ID = #{memberId}
+    </update>
+
+    <!--  오동건 - 회원 탈퇴  -->
+    <update id="updateMemberWithdrawal" parameterType="long">
+        UPDATE MEMBER
+        SET DELETE_FLAG = 'Y'
+          , REFRESH_TOKEN = null
+        WHERE MEMBER_ID = #{memberId}
+    </update>
+
+    <!--  오동건 - 회원 탈퇴  -->
+    <update id="updateRefreshToken" parameterType="long">
+        UPDATE MEMBER
+        SET REFRESH_TOKEN = null
+        WHERE MEMBER_ID = #{memberId}
     </update>
 </mapper>
 

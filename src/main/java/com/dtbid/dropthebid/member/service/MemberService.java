@@ -6,13 +6,16 @@ import com.dtbid.dropthebid.member.model.form.SignInForm;
 import com.dtbid.dropthebid.member.model.form.SignUpForm;
 import com.dtbid.dropthebid.member.repository.MemberRepository;
 import com.dtbid.dropthebid.security.component.JwtTokenProvider;
+import com.dtbid.dropthebid.security.model.CustomUserDetails;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.CookieValue;
 
 import static com.dtbid.dropthebid.exception.ErrorCode.*;
 
@@ -61,6 +64,10 @@ public class MemberService {
     // 아이디 확인
     MemberDto memberDto = memberRepository.findByMemberEmail(signInForm.getEmail());
     if (memberDto == null) {
+      throw new GlobalException(UNABLE_LOGIN);
+    }
+
+    if ("Y".equals(memberDto.getDeleteFlag())) {
       throw new GlobalException(UNABLE_LOGIN);
     }
 
@@ -115,5 +122,29 @@ public class MemberService {
     memberRepository.updateMemberInfo(memberId, signUpForm);
 
     return memberRepository.findByMemberId(memberId);
+  }
+
+  // 오동건 - 회원 탈퇴
+  public String memberInfoWithdrawal(Long memberId) {
+
+    memberRepository.updateMemberWithdrawal(memberId);
+
+    return "탈퇴 되었습니다.";
+  }
+
+  // 오동건 - 로그아웃
+  public String memberLogout(HttpServletResponse response, Long memberId) {
+
+    // 토큰 쿠키 삭제
+    Cookie refreshTokenCookie = new Cookie("refreshToken", null);
+    refreshTokenCookie.setHttpOnly(true);
+    refreshTokenCookie.setSecure(false);
+    refreshTokenCookie.setPath("/");
+    refreshTokenCookie.setMaxAge(0);
+    response.addCookie(refreshTokenCookie);
+
+    memberRepository.updateRefreshToken(memberId);
+
+    return "로그아웃 되었습니다.";
   }
 }

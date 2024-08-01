@@ -18,4 +18,5 @@ public class MemberDto {
     private String address;
     private String authority;
     private String refreshToken;
+    private String deleteFlag;
 }

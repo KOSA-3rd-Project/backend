@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.dtbid.dropthebid.auction.repository.AuctionRepository">
 	<insert id="insertAuction">
-		INSERT INTO auction(auction_id, member_id, category_id, auction_status_id, auction_product_status_id, item_name, description, 
+		INSERT INTO auction(auction_id, member_id, category_id, auction_status_id, auction_product_status_id, item_name, description,
 		location, start_price, start_date, due_date, created_at, updated_at) VALUES (
 		auction_seq.NEXTVAL, #{memberId}, #{categoryId}, #{auctionStatusId}, #{auctionProductStatusId}, #{itemName}, #{description},
 		#{location}, #{startPrice}, #{startDate}, #{dueDate}, SYSDATE, SYSDATE)
-		
+
 		<selectKey keyProperty="auctionId" resultType="int" order="AFTER">
 			select auction_seq.CURRVAL FROM DUAL
 		</selectKey>
 	</insert>
-	
+
 	<insert id="insertAuctionImage">
 		INSERT INTO auction_image(auction_id, url, extension, main_image, image_size) VALUES (
-		#{auctionId},#{url}, #{extension}, #{mainImage}, #{imageSize})
+																								 #{auctionId},#{url}, #{extension}, #{mainImage}, #{imageSize})
 	</insert>
-	
+
 	<update id="updateAuction">
-			UPDATE auction
-	    <set>
-	        <if test="itemName != null">
-	            item_name = #{itemName},
-	        </if>
-	        <if test="categoryId != 0">
-	            category_id = #{categoryId},
-	        </if>
-	        <if test="auctionProductStatusId != 0">
-	            auction_product_status_id = #{auctionProductStatusId},
-	        </if>
-	        <if test="location != null">
-	            location = #{location},
-	        </if>
-	        <if test="startPrice != 0">
-	            start_price = #{startPrice},
-	        </if>
-	        <if test="startDate != null">
-	            start_date = #{startDate},
-	        </if>
-	        <if test="dueDate != null">
-	            due_date = #{dueDate},
-	        </if>
-	        <if test="description != null">
-	            description = #{description},
-	        </if>
-	        updated_at = SYSDATE
-	    </set>
-	    WHERE auction_id = #{auctionId}
+		UPDATE auction
+		<set>
+			<if test="itemName != null">
+				item_name = #{itemName},
+			</if>
+			<if test="categoryId != 0">
+				category_id = #{categoryId},
+			</if>
+			<if test="auctionProductStatusId != 0">
+				auction_product_status_id = #{auctionProductStatusId},
+			</if>
+			<if test="location != null">
+				location = #{location},
+			</if>
+			<if test="startPrice != 0">
+				start_price = #{startPrice},
+			</if>
+			<if test="startDate != null">
+				start_date = #{startDate},
+			</if>
+			<if test="dueDate != null">
+				due_date = #{dueDate},
+			</if>
+			<if test="description != null">
+				description = #{description},
+			</if>
+			updated_at = SYSDATE
+		</set>
+		WHERE auction_id = #{auctionId}
 	</update>
-	
+
 	<delete id="deleteAuctionImage">
 		delete from auction_image
 		where url=#{url}
 	</delete>
-	
+
 	<select id="getAuction" resultType="AuctionDto">
-		SELECT 
-	        a.*,
-	        c.category_name AS category_name,
-	        ps.status_name AS auction_product_status_name,
-	        s.auction_status_name AS auction_status_name
-	    FROM 
-	        auction a
-	    JOIN 
-	        category c 
-	    ON 
-	        a.category_id = c.category_id
-	    JOIN 
-	        auction_product_status ps
-	    ON 
-	        a.auction_product_status_id = ps.auction_product_status_id
-	    JOIN 
-	        auction_status s
-	    ON 
-	        a.auction_status_id = s.auction_status_id
-	    WHERE 
-	        a.auction_id = #{auctionId}
+		SELECT
+			a.*,
+			c.category_name AS category_name,
+			ps.status_name AS auction_product_status_name,
+			s.auction_status_name AS auction_status_name
+		FROM
+			auction a
+				JOIN
+			category c
+			ON
+				a.category_id = c.category_id
+				JOIN
+			auction_product_status ps
+			ON
+				a.auction_product_status_id = ps.auction_product_status_id
+				JOIN
+			auction_status s
+			ON
+				a.auction_status_id = s.auction_status_id
+		WHERE
+			a.auction_id = #{auctionId}
 	</select>
-	
+
 	<select id="getAuctionImages" resultType="Image">
 		select AUCTION_IMAGE_ID, AUCTION_ID, URL, EXTENSION, MAIN_IMAGE
 		from auction_image
@@ -89,23 +89,23 @@
 
 	<insert id="insertBidding" parameterType="map">
 		insert into bidding(MEMBER_ID, AUCTION_ID, PRICE, TIME) values (
-		(SELECT MEMBER_ID FROM member WHERE EMAIL = #{memberEmail}),
-	    #{auctionId},
-	    #{price},
-	   SYSDATE)
+																			   (SELECT MEMBER_ID FROM member WHERE EMAIL = #{memberEmail}),
+																			   #{auctionId},
+																			   #{price},
+																			   SYSDATE)
 	</insert>
-	
+
 	<select id="getHighestBidding" resultType="BiddingDto">
-	    SELECT *
-	    FROM (
-	        SELECT *
-	        FROM bidding
-	        WHERE AUCTION_ID = #{auctionId}
-	        ORDER BY PRICE DESC
-	    )
-	    WHERE ROWNUM = 1
+		SELECT *
+		FROM (
+				 SELECT *
+				 FROM bidding
+				 WHERE AUCTION_ID = #{auctionId}
+				 ORDER BY PRICE DESC
+			 )
+		WHERE ROWNUM = 1
 	</select>
-	
+
 	<select id="getBiddings" parameterType="int" resultType="BiddingDto">
 		SELECT
 	        b.bid_id AS bid_id,
@@ -124,19 +124,148 @@
 	    ORDER BY
 	        b.price DESC
 	</select>
-	
+
 	<select id="getAll">
 		select *
 		from auction
 	</select>
-	
+
 	<update id="updateAuctionStatus">
 		update auction
 		set auction_status_id = #{auctionStatusId}
 		where auction_id = #{auctionId}
 	</update>
-	
+
 	<insert id="insertBidingSuccess">
 		insert into bidding_success(bid_id) values (#{bidId})
 	</insert>
+
+
+	<!-- 오동건 - 나의 경매 물품 조회	-->
+	<select id="findByMemberAuctionItem" parameterType="map" resultType="com.dtbid.dropthebid.member.model.dto.MemberAuctionDto">
+		SELECT ME.MEMBER_ID
+			 , AU.AUCTION_ID
+			 , AU.ITEM_NAME
+			 , AU.START_PRICE
+			 , AUS.AUCTION_STATUS_ID
+			 , AUS.AUCTION_STATUS_NAME
+			 , AUI.URL
+			 , NVL(MAX(BI.PRICE), 0)    MAX_PRICE
+		FROM MEMBER                   ME
+				 INNER JOIN AUCTION                  AU
+							ON AU.MEMBER_ID             = ME.MEMBER_ID
+				 INNER JOIN AUCTION_IMAGE            AUI
+							ON AUI.AUCTION_ID           = AU.AUCTION_ID
+								AND AUI.MAIN_IMAGE           = 'Y'
+				 INNER JOIN AUCTION_STATUS           AUS
+							ON AUS.AUCTION_STATUS_ID    = AU.AUCTION_STATUS_ID
+				 LEFT JOIN BIDDING                  BI
+						   ON BI.AUCTION_ID            = AU.AUCTION_ID
+		WHERE ME.MEMBER_ID				= #{memberId}
+		GROUP BY ME.MEMBER_ID
+			   , AU.AUCTION_ID
+			   , AU.ITEM_NAME
+			   , AU.START_PRICE
+			   , AUS.AUCTION_STATUS_ID
+			   , AUS.AUCTION_STATUS_NAME
+			   , AUI.URL
+			   , AU.CREATED_AT
+		ORDER BY AU.CREATED_AT
+		OFFSET #{offset} ROWS FETCH NEXT 9 ROWS ONLY
+	</select>
+
+	<!-- 오동건 - 나의 경매 물품 총수	-->
+	<select id="countByAuctionItem" parameterType="long" resultType="int">
+		SELECT count(*)
+		FROM (SELECT ME.MEMBER_ID
+				   , AU.AUCTION_ID
+				   , AU.ITEM_NAME
+				   , AU.START_PRICE
+				   , AUS.AUCTION_STATUS_ID
+				   , AUS.AUCTION_STATUS_NAME
+				   , AUI.URL
+				   , MAX(BI.PRICE)            MAX_PRICE
+			  FROM MEMBER                   ME
+					   INNER JOIN AUCTION                  AU
+								  ON AU.MEMBER_ID             = ME.MEMBER_ID
+					   INNER JOIN AUCTION_IMAGE            AUI
+								  ON AUI.AUCTION_ID           = AU.AUCTION_ID
+									  AND AUI.MAIN_IMAGE           = 'Y'
+					   INNER JOIN AUCTION_STATUS           AUS
+								  ON AUS.AUCTION_STATUS_ID    = AU.AUCTION_STATUS_ID
+					   LEFT JOIN BIDDING                  BI
+								 ON BI.AUCTION_ID            = AU.AUCTION_ID
+			  WHERE ME.MEMBER_ID				= #{memberId}
+			  GROUP BY ME.MEMBER_ID
+					 , AU.AUCTION_ID
+					 , AU.ITEM_NAME
+					 , AU.START_PRICE
+					 , AUS.AUCTION_STATUS_ID
+					 , AUS.AUCTION_STATUS_NAME
+					 , AUI.URL)
+	</select>
+
+	<!-- 오동건 - 나의 입찰 내역 조회	-->
+	<select id="findByMemberBidding" parameterType="map" resultType="com.dtbid.dropthebid.member.model.dto.MemberAuctionDto">
+		SELECT ME.MEMBER_ID
+			 , AU.AUCTION_ID
+			 , AU.ITEM_NAME
+			 , AU.START_PRICE
+			 , AUS.AUCTION_STATUS_ID
+			 , AUS.AUCTION_STATUS_NAME
+			 , AUI.URL
+			 , NVL(MAX(BI.PRICE), 0)    MAX_PRICE
+		FROM MEMBER                   ME
+				 INNER JOIN BIDDING                  BI
+							ON BI.MEMBER_ID             = ME.MEMBER_ID
+				 INNER JOIN AUCTION                  AU
+							ON AU.AUCTION_ID            = BI.AUCTION_ID
+				 INNER JOIN AUCTION_IMAGE            AUI
+							ON AUI.AUCTION_ID           = AU.AUCTION_ID
+								AND AUI.MAIN_IMAGE           = 'Y'
+				 INNER JOIN AUCTION_STATUS           AUS
+							ON AUS.AUCTION_STATUS_ID    = AU.AUCTION_STATUS_ID
+		WHERE ME.MEMBER_ID				= #{memberId}
+		GROUP BY ME.MEMBER_ID
+			   , AU.AUCTION_ID
+			   , AU.ITEM_NAME
+			   , AU.START_PRICE
+			   , AUS.AUCTION_STATUS_ID
+			   , AUS.AUCTION_STATUS_NAME
+			   , AUI.URL
+			   , AU.CREATED_AT
+		ORDER BY AU.CREATED_AT
+		OFFSET #{offset} ROWS FETCH NEXT 9 ROWS ONLY
+	</select>
+
+	<!-- 오동건 - 나의 입찰 내역 총 수	-->
+	<select id="countByMemberBidding" parameterType="long" resultType="int">
+		SELECT count(*)
+		FROM (SELECT ME.MEMBER_ID
+				   , AU.AUCTION_ID
+				   , AU.ITEM_NAME
+				   , AU.START_PRICE
+				   , AUS.AUCTION_STATUS_ID
+				   , AUS.AUCTION_STATUS_NAME
+				   , AUI.URL
+				   , NVL(MAX(BI.PRICE), 0)    MAX_PRICE
+			  FROM MEMBER                   ME
+					   INNER JOIN BIDDING                  BI
+								  ON BI.MEMBER_ID             = ME.MEMBER_ID
+					   INNER JOIN AUCTION                  AU
+								  ON AU.AUCTION_ID            = BI.AUCTION_ID
+					   INNER JOIN AUCTION_IMAGE            AUI
+								  ON AUI.AUCTION_ID           = AU.AUCTION_ID
+									  AND AUI.MAIN_IMAGE           = 'Y'
+					   INNER JOIN AUCTION_STATUS           AUS
+								  ON AUS.AUCTION_STATUS_ID    = AU.AUCTION_STATUS_ID
+			  WHERE ME.MEMBER_ID				= #{memberId}
+			  GROUP BY ME.MEMBER_ID
+					 , AU.AUCTION_ID
+					 , AU.ITEM_NAME
+					 , AU.START_PRICE
+					 , AUS.AUCTION_STATUS_ID
+					 , AUS.AUCTION_STATUS_NAME
+					 , AUI.URL)
+	</select>
 </mapper>
