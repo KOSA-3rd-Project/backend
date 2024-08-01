@@ -1,7 +1,10 @@
 package com.dtbid.dropthebid.security.component;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.regex.Pattern;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -24,10 +27,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
   public final String TOKEN_HEADER = "Authorization";
   public final String TOKEN_PREFIX = "Bearer ";
-
-
   private final AntPathMatcher pathMatcher = new AntPathMatcher();
-
+  
   @Override
   protected boolean shouldNotFilter(HttpServletRequest request) {
 
@@ -44,6 +45,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         .anyMatch(pattern -> pathMatcher.match(pattern, path));
   }
   
+
 
   @Override
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
@@ -71,7 +73,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         Authentication authentication = jwtTokenProvider.getAuthentication(token, true);
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-      } 
+      }
     } catch (ExpiredJwtException ex) {
       // 만료 에러 엑세스 토큰 확인 필요
       response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

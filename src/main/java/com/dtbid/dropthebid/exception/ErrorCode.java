@@ -12,6 +12,7 @@ public enum ErrorCode {
     ALREADY_MEMBER_EMAIL("이미 가입된 이메일 입니다."),
     ALREADY_NICKNAME("중복된 닉네임 입니다."),
     UNABLE_LOGIN("아이디 또는 비밀번호가 잘못 되었습니다."),
+    NOT_FIND_MEMBER("존재하지 않는 사용자입니다."),
 
     // 토큰
     NOT_FIND_TOKEN("토큰이 유효하지 않습니다."),

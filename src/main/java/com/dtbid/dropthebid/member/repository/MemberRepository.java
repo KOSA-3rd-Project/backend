@@ -16,7 +16,7 @@ public interface MemberRepository {
   // 오동건 - 가입된 닉네임 확인
   Long countByNicName(String nickName);
 
-  // 오동건 - 사용자아이디 기준 정보 조히
+  // 오동건 - 사용자아이디 기준 정보 조회
   MemberDto findByMemberId(Long memberId);
 
   // 오동건 - 이메일기준 사용자 검색
@@ -32,4 +32,10 @@ public interface MemberRepository {
   // 오동건 - 회원 정보 수정
   void updateMemberInfo(
       @Param("memberId") Long memberId, @Param("signUpForm") SignUpForm signUpForm);
+
+  // 오동건 - 회원 탈퇴
+  void updateMemberWithdrawal(Long memberId);
+
+  // 오동건 - 로그아웃 (토큰 제거)
+  void updateRefreshToken(Long memberId);
 }
