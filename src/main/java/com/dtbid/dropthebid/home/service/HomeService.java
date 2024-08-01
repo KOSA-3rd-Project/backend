@@ -6,6 +6,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
+/**
+ * 작성자: 이주윤
+ */
 @Service
 @RequiredArgsConstructor
 public class HomeService {
