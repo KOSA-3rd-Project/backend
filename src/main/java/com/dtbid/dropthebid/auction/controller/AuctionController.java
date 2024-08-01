@@ -50,6 +50,7 @@ public class AuctionController { // 이윤빈 - 경매 등록, 조회, 취소, �
     log.info("메인이미지" + mainImageIndex);
 
     try {
+
       int auctionId = auctionService.insertAuction(newAuctionJson, images, mainImageIndex, customUserDetails.getId());
 
       return new ResponseEntity<>(auctionId, HttpStatus.CREATED);
@@ -114,12 +115,10 @@ public class AuctionController { // 이윤빈 - 경매 등록, 조회, 취소, �
    public ResponseEntity<String> biddingAuction(
        @PathVariable("id") int auctionId, @RequestParam("price") int price, 
        @AuthenticationPrincipal CustomUserDetails customUserDetails){ // 입찰하기
-     //){
      try {
        System.out.println("????");
        System.out.println(customUserDetails.getId());
        auctionService.insertBidding(auctionId, price, customUserDetails.getUsername());
-       //auctionService.insertBidding(auctionId, price, "yunbin@gmail.com");
        
        return new ResponseEntity<>("bidding success", HttpStatus.OK);
      } catch (GlobalException e) {

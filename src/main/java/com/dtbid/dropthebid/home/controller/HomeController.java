@@ -3,6 +3,7 @@ package com.dtbid.dropthebid.home.controller;
 import com.dtbid.dropthebid.home.model.AuctionSummaryDto;
 import com.dtbid.dropthebid.home.service.HomeService;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 작성자: 이주윤
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/auctions")
@@ -26,11 +30,16 @@ public class HomeController {
   @GetMapping("/month")
   public ResponseEntity<Map<String, Object>> getAuctionOfTheMonth() {
 
-    AuctionSummaryDto auctionSummaryDto = homeService.getPopularAuctionList().get(0);
-
+    List<AuctionSummaryDto> monthlyAuction = homeService.getPopularAuctionList();
     Map<String, Object> response = new HashMap<>();
-    response.put("auction", auctionSummaryDto);
-    response.put("message", "이 달의 경매 조회 성공");
+
+    if (!monthlyAuction.isEmpty()) {
+      AuctionSummaryDto auctionSummaryDto = monthlyAuction.get(0);
+      response.put("auction", auctionSummaryDto);
+      response.put("message", "이 달의 경매 조회 성공");
+    } else {
+      response.put("message", "이 달의 경매가 없습니다");
+    }
 
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType(MediaType.APPLICATION_JSON);
@@ -42,9 +51,9 @@ public class HomeController {
   public ResponseEntity<Map<String, Object>> getPopularAuctions() {
 
     List<AuctionSummaryDto> auctionSummaryDtoList = homeService.getPopularAuctionList();
-    List<AuctionSummaryDto> slicedAuctionSummaryDtoList = null;
+    List<AuctionSummaryDto> slicedAuctionSummaryDtoList = new ArrayList<>();
 
-    if (auctionSummaryDtoList != null) {
+    if (auctionSummaryDtoList != null && auctionSummaryDtoList.size() > 1) {
       slicedAuctionSummaryDtoList = auctionSummaryDtoList.subList(1,
           auctionSummaryDtoList.size());
     }

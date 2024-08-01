@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,6 +16,7 @@ import com.dtbid.dropthebid.auction.model.Image;
 import com.dtbid.dropthebid.auction.repository.AuctionRepository;
 import com.dtbid.dropthebid.exception.ErrorCode;
 import com.dtbid.dropthebid.exception.GlobalException;
+import com.dtbid.dropthebid.security.model.CustomUserDetails;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -186,8 +188,11 @@ public class AuctionService {
       auctionRepository.updateAuctionStatus(auctionId, 5);
     } catch(Exception e) {
       e.printStackTrace(); 
-    }
-    
+    }  
+  }
+  
+  public Optional<BiddingDto> getHighestBidding(int auctionId) {
+     return auctionRepository.getHighestBidding(auctionId);
   }
 
 }

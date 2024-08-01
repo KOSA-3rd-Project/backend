@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Payment {
   
-  private Integer paymentId;
+  // private Integer paymentId;
   private Integer auctionId;
   private Integer biddingSuccessId;
   private String name;
@@ -18,4 +18,5 @@ public class Payment {
   private String address;
   private String message;
   private Timestamp createdAt;
+  
 }

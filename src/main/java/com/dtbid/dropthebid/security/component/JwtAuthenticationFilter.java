@@ -38,7 +38,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
        // "/chat", "/chat/create", "/chat/**", "/ws", "/ws/**"
    };
 
-
     String path = request.getRequestURI();
 
     return Arrays.stream(api)
