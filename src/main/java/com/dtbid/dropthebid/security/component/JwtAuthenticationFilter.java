@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+import org.springframework.util.AntPathMatcher;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -25,28 +26,36 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
   public final String TOKEN_PREFIX = "Bearer ";
 
 
+  private final AntPathMatcher pathMatcher = new AntPathMatcher();
+
   @Override
   protected boolean shouldNotFilter(HttpServletRequest request) {
 
     String[] api = {"/members/signin", "/members/signup", "/auctions/month", "/auctions/popular",
-         "/auctions/new", "/search", "/members/checks/refresh-token", 
-        "/auctions", "/auctions/19", "/auctions/19/bids", "/auctions/18/bids", 
-        "/auctions/payment", "/payment", "/payment/**"
-        // "/chat", "/chat/create", "/chat/**", "/ws", "/ws/**"
-    };
+        "/auctions/new", "/search", "/members/checks/refresh-token", 
+        "/auctions/all/**",
+       "/payment", "/payment/**"
+       // "/chat", "/chat/create", "/chat/**", "/ws", "/ws/**"
+   };
 
     String path = request.getRequestURI();
 
-    return Arrays.stream(api).anyMatch(path::startsWith);
+    return Arrays.stream(api)
+        .anyMatch(pattern -> pathMatcher.match(pattern, path));
   }
+  
 
   @Override
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
       FilterChain filterChain) throws ServletException, IOException {
 
     try {
+      
+      String path = request.getRequestURI();
+      
       // 토큰
       String token = request.getHeader(TOKEN_HEADER);
+      System.out.println(token);
 
       // 토큰이 없을 경우
       if (!StringUtils.hasText(token)) {

@@ -17,6 +17,7 @@ import lombok.ToString;
 public class BiddingDto {
   private int bidId;
   private int memberId;
+  private String memberEmail;
   private int auctionId;
   private int price;
   Timestamp time;

@@ -17,7 +17,7 @@ import lombok.ToString;
 @Builder
 public class AuctionDto {
   private int auctionId;
-  private int memberId;
+  private Long memberId;
   private int categoryId;
   private String categoryName;
   private int auctionStatusId;
