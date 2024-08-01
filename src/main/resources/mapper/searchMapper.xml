@@ -27,29 +27,30 @@
             end desc
         ) as rn
       from auction a
-        left join (
-            select auction_id, max(price) as highest_bid, count(*) as bid_count
-            from bidding
-            group by auction_id
+             left join (
+        select auction_id, max(price) as highest_bid, count(*) as bid_count
+        from bidding
+        group by auction_id
       ) b on a.auction_id = b.auction_id
-        left join (
-            select auction_id, url
-            from auction_image
-            where main_image = 'Y'
+             left join (
+        select auction_id, url
+        from auction_image
+        where main_image = 'Y'
       ) i on a.auction_id = i.auction_id
-        left join category c on a.category_id = c.category_id
-        left join auction_status s on a.auction_status_id = s.auction_status_id
-        left join auction_product_status p on a.auction_product_status_id = p.auction_product_status_id
+             left join category c on a.category_id = c.category_id
+             left join auction_status s on a.auction_status_id = s.auction_status_id
+             left join auction_product_status p on a.auction_product_status_id = p.auction_product_status_id
       where
-         (a.item_name like '%'||#{query}||'%'
-         or a.description like '%'||#{query}||'%'
-         or c.category_name like '%'||#{query}||'%'
-         or s.auction_status_name like '%'||#{query}||'%'
-         or p.status_name like '%'||#{query}||'%')
-         and (#{category,jdbcType=VARCHAR} is null or c.category_name = #{category,jdbcType=VARCHAR})
-         and (#{condition,jdbcType=VARCHAR} is null or p.status_name = #{condition,jdbcType=VARCHAR})
-         and (#{minPrice,jdbcType=INTEGER} is null or a.start_price >= #{minPrice,jdbcType=NUMERIC})
-         and (#{maxPrice,jdbcType=INTEGER} is null or a.start_price <= #{maxPrice,jdbcType=NUMERIC})
+        (a.item_name like '%'||#{query}||'%'
+        or a.description like '%'||#{query}||'%'
+        or c.category_name like '%'||#{query}||'%'
+        or s.auction_status_name like '%'||#{query}||'%'
+        or p.status_name like '%'||#{query}||'%')
+        and (#{category,jdbcType=VARCHAR} is null or c.category_name = #{category,jdbcType=VARCHAR})
+        and (#{condition,jdbcType=VARCHAR} is null or p.status_name = #{condition,jdbcType=VARCHAR})
+        and (#{minPrice,jdbcType=INTEGER} is null or a.start_price >= #{minPrice,jdbcType=NUMERIC})
+        and (#{maxPrice,jdbcType=INTEGER} is null or a.start_price <= #{maxPrice,jdbcType=NUMERIC})
+        and s.auction_status_name not in ('낙찰', '유찰', '취소')
     )
     select auction_id, item_name, start_price, highest_bid, url
     from auctions
