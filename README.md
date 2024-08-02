@@ -15,7 +15,7 @@
 |조재은(c)|결제|
 |이윤빈|경매|
 |오동건|회원|
-|이주윤|검색|
+|이주윤|검색, 랭킹|
 
 #### ERD
 ![경매](https://github.com/user-attachments/assets/53f3b194-d722-44eb-92c4-93ed2e77db80)
