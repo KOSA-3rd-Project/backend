@@ -78,6 +78,7 @@
         and (#{condition,jdbcType=VARCHAR} is null or p.status_name = #{condition,jdbcType=VARCHAR})
         and (#{minPrice,jdbcType=INTEGER} is null or a.start_price >= #{minPrice,jdbcType=NUMERIC})
         and (#{maxPrice,jdbcType=INTEGER} is null or a.start_price <= #{maxPrice,jdbcType=NUMERIC})
+        and s.auction_status_name not in ('낙찰', '유찰', '취소')
     ]]>
   </select>
 </mapper>
