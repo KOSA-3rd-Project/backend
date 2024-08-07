@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.dtbid.dropthebid.auction.repository.PaymentRepository">
+	
+	<resultMap id="PaymentResultMap" type="com.dtbid.dropthebid.auction.model.Payment">
+	   <result property="paymentId" column="payment_id"/>
+	   <result property="auctionId" column="auction_id"/>
+	   <result property="biddingSuccessId" column="bidding_success_id"/>
+	   <result property="name" column="name"/>
+	   <result property="phoneNumber" column="phone_number"/>
+	   <result property="address" column="address"/>
+	   <result property="message" column="message"/>
+	   <result property="createdAt" column="created_at"/>
+	 </resultMap>
+  
+	<insert id="insertPayment" parameterType="com.dtbid.dropthebid.auction.model.Payment">
+		INSERT INTO payment (auction_id, bidding_success_id, name, phone_number, address, message)
+		VALUES (#{auctionId}, #{biddingSuccessId}, #{name}, #{phoneNumber}, #{address}, #{message})
+	</insert>
+    
+</mapper>

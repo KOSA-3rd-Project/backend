@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 작성자: 이주윤 -->
+
+<mapper namespace="com.dtbid.dropthebid.search.repository.SearchRepository">
+  <select id="searchAuctions" resultType="SearchDto">
+    <![CDATA[
+    with auctions as (
+      select
+        a.auction_id,
+        a.item_name,
+        a.start_price,
+        coalesce(b.highest_bid, 0) as highest_bid,
+        i.url,
+        row_number() over (
+            order by
+            case
+                when #{sort, jdbcType=VARCHAR} = 'popular' then coalesce(b.bid_count, 0)
+                when #{sort, jdbcType=VARCHAR} = 'lowPrice' then a.start_price * -1
+                when #{sort, jdbcType=VARCHAR} = 'highPrice' then a.start_price
+                else (
+                    extract(day from (a.created_at - date '1970-01-01')) * 86400000 +
+                    extract(hour from cast(a.created_at as timestamp)) * 3600000 +
+                    extract(minute from cast(a.created_at as timestamp)) * 60000 +
+                    extract(second from cast(a.created_at as timestamp)) * 1000
+                )
+            end desc
+        ) as rn
+      from auction a
+             left join (
+        select auction_id, max(price) as highest_bid, count(*) as bid_count
+        from bidding
+        group by auction_id
+      ) b on a.auction_id = b.auction_id
+             left join (
+        select auction_id, url
+        from auction_image
+        where main_image = 'Y'
+      ) i on a.auction_id = i.auction_id
+             left join category c on a.category_id = c.category_id
+             left join auction_status s on a.auction_status_id = s.auction_status_id
+             left join auction_product_status p on a.auction_product_status_id = p.auction_product_status_id
+      where
+        (a.item_name like '%'||#{query}||'%'
+        or a.description like '%'||#{query}||'%'
+        or c.category_name like '%'||#{query}||'%'
+        or s.auction_status_name like '%'||#{query}||'%'
+        or p.status_name like '%'||#{query}||'%')
+        and (#{category,jdbcType=VARCHAR} is null or c.category_name = #{category,jdbcType=VARCHAR})
+        and (#{condition,jdbcType=VARCHAR} is null or p.status_name = #{condition,jdbcType=VARCHAR})
+        and (#{minPrice,jdbcType=INTEGER} is null or a.start_price >= #{minPrice,jdbcType=NUMERIC})
+        and (#{maxPrice,jdbcType=INTEGER} is null or a.start_price <= #{maxPrice,jdbcType=NUMERIC})
+        and s.auction_status_name not in ('낙찰', '유찰', '취소')
+    )
+    select auction_id, item_name, start_price, highest_bid, url
+    from auctions
+    where rn between #{offset} + 1 and #{offset} + 9
+    order by rn
+    ]]>
+  </select>
+
+  <select id="getTotalCount" resultType="int">
+    <![CDATA[
+    select count(*)
+    from auction a
+    left join category c on a.category_id = c.category_id
+    left join auction_status s on a.auction_status_id = s.auction_status_id
+    left join auction_product_status p on a.auction_product_status_id = p.auction_product_status_id
+    where
+        (a.item_name like '%'||#{query}||'%'
+        or a.description like '%'||#{query}||'%'
+        or c.category_name like '%'||#{query}||'%'
+        or s.auction_status_name like '%'||#{query}||'%'
+        or p.status_name like '%'||#{query}||'%')
+        and (#{category,jdbcType=VARCHAR} is null or c.category_name = #{category,jdbcType=VARCHAR})
+        and (#{condition,jdbcType=VARCHAR} is null or p.status_name = #{condition,jdbcType=VARCHAR})
+        and (#{minPrice,jdbcType=INTEGER} is null or a.start_price >= #{minPrice,jdbcType=NUMERIC})
+        and (#{maxPrice,jdbcType=INTEGER} is null or a.start_price <= #{maxPrice,jdbcType=NUMERIC})
+        and s.auction_status_name not in ('낙찰', '유찰', '취소')
+    ]]>
+  </select>
+</mapper>

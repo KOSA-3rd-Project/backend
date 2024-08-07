@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dtbid.dropthebid.chat.repository.ChatRoomRepository">
+
+    <resultMap id="ChatRoomResultMap" type="com.dtbid.dropthebid.chat.model.ChatRoom">
+        <id property="chatRoomId" column="chatting_room_id" javaType="long"/>
+        <result property="auctionId" column="auction_id" javaType="long"/>
+        <result property="memberId" column="member_id" javaType="long"/>
+    </resultMap>
+
+    <insert id="insertChatRoom" parameterType="com.dtbid.dropthebid.chat.model.ChatRoom" useGeneratedKeys="true" keyProperty="chatRoomId">
+        INSERT INTO chatting_room (auction_id, member_id)
+        VALUES (#{auctionId}, #{memberId})
+        <selectKey keyProperty="chatRoomId" resultType="long" order="AFTER">
+            SELECT chatting_room_id FROM chatting_room WHERE ROWNUM = 1 ORDER BY chatting_room_id DESC
+        </selectKey>
+    </insert>
+
+</mapper>
