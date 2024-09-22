@@ -33,7 +33,7 @@
 <ul>
   <li>환경: Visual Studio Code, Spring Tool Suite 4, SQL Developer 20, SQL Developer Modeler 20</li>
   <li>언어: Java 8, JavaScript, Html, Css</li>
-  <li>세부 스택: Spring Boot 3, Spring Security, Vue.js, Vuetify, STOMP, Web Socket</li>
+  <li>세부 스택: Spring Boot 3, Spring Security, Vue.js, Vuetify</li>
   <li>데이터 베이스: MyBatis, Oracle</li>
   <li>협업도구: Git, GitHub, Google Workspace</li>
 </ul>
