@@ -17,7 +17,7 @@
    </tr>
    <tr>
     <td>조재은</td>
-    <td>결제, 채팅</td>
+    <td>결제</td>
    </tr>
 </table>
 <br>
@@ -104,13 +104,6 @@
     <img width="900" src="https://github.com/user-attachments/assets/c0a959e7-b438-499d-bf8d-5ede775c15ab">
     <img width="900" src="https://github.com/user-attachments/assets/e91dd9d5-9998-4a9a-8ab8-48b984077949">
     <img width="900" src="https://github.com/user-attachments/assets/e1938e29-37b8-4003-8a4f-82bb806c6b53">
-  </li>
-  <br>
-
-  <li>채팅페이지
-    <br>
-    <img width="900" src="https://github.com/user-attachments/assets/8a9acc22-c538-4916-9da1-ddf3545910ce">
-    <img width="900" src="https://github.com/user-attachments/assets/da5ed260-045c-4fe4-afcc-f4b4ea39381d">
   </li>
   <br>
 </ul>
